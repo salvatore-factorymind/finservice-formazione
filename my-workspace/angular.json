@@ -25,6 +25,8 @@
               }
             ],
             "styles": [
+              "node_modules/devextreme/dist/css/dx.light.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "projects/my-app/src/styles.css"
             ]
           },
