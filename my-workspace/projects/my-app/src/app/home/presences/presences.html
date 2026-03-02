@@ -1,1 +1,30 @@
-<h6>Presences</h6>
+<div class="col-md-12">
+    <div class="card">
+        <dx-data-grid [dataSource]="unionsSvc.Union()" (onRowClick)="handleRowClicked($event)" [showBorders]="true">
+            <dxo-data-grid-filter-row [visible]="true"></dxo-data-grid-filter-row>
+            <dxi-data-grid-column dataField="id" dataType="number" caption="Id"></dxi-data-grid-column>
+            <dxi-data-grid-column dataField="idUser" caption="Nome">
+                <dxo-lookup
+                    [dataSource]="usersSvc.User()"
+                    valueExpr="id"
+                    displayExpr="name">
+                </dxo-lookup>
+            </dxi-data-grid-column>
+            <dxi-data-grid-column dataField="idUser" caption="Cognome">
+                <dxo-lookup
+                    [dataSource]="usersSvc.User()"
+                    valueExpr="id"
+                    displayExpr="surname">
+                </dxo-lookup>
+            </dxi-data-grid-column>
+            <dxi-data-grid-column dataField="idProject" caption="Progetto">
+                <dxo-lookup
+                    [dataSource]="projectsSvc.Project()"
+                    valueExpr="id"
+                    displayExpr="name">
+                </dxo-lookup>
+            </dxi-data-grid-column>
+            <dxi-data-grid-column dataField="hours" dataType="number" caption="Ore"></dxi-data-grid-column>
+        </dx-data-grid>
+    </div>
+</div>
