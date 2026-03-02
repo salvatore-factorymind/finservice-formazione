@@ -16,7 +16,7 @@ export interface Projects{
 
 export interface Union{
     id: number,
-    idUser: User[],
-    idProject: Projects[],
+    idUser: number,
+    idProject: number,
     hours: number
 }

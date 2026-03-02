@@ -1,0 +1,27 @@
+{
+    "Nav": {
+        "NomePagina": "Project Reporting",
+        "Risorse": "Resources",
+        "Progetti": "Projects",
+        "Associazioni": "Associations",
+        "Footer": "© 2026 Project Management System - All rights reserved"
+    },
+
+    "Risorse": {
+        "Cognome": "Last Name",
+        "Nome": "First Name",
+        "Mansione": "Role",
+        "DataDiNascita": "Date of Birth"
+    },
+
+    "Pulsanti": {
+        "Aggiungi": "Add",
+        "Invia": "Submit",
+        "Chiudi": "Close"
+    },
+
+    "Controlli": {
+        "CampoObbligatorio": "Required field",
+        "ControlloDataNascita": "Date of birth cannot be later than today"
+    }
+}

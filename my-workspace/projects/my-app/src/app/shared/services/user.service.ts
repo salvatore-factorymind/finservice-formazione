@@ -1,12 +1,12 @@
-import { Injectable, signal } from '@angular/core';
-
+import { Injectable, Signal, signal } from '@angular/core';
+ 
 import { User } from '../models/models';
-
+ 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
+ 
 private readonly UserList = signal<User[]>([
     {
     id: 1,
@@ -30,9 +30,30 @@ private readonly UserList = signal<User[]>([
     dateBirth: new Date("1995-02-18")
   }
 ])
+ 
+ 
+  public get User():Signal<User[]>{
+    return this.UserList.asReadonly();
+  }
 
 
+  public SaveUser(FormUser: User):void{
+    const existingUser = [...this.UserList()];
 
+    const existingUserIndex = existingUser.findIndex(User => User.id === FormUser.id)
 
+    if(existingUserIndex >= 0){
+      const existingContact = existingUser[existingUserIndex]
+      const updateContact = Object.assign({},existingContact, FormUser)
+      
+      existingUser.splice(existingUserIndex, 1, updateContact)
+    }else{
+      const MaxId = Math.max(...existingUser.map(User => User.id))+1
+      FormUser.id = MaxId
+      existingUser.push(FormUser);
+    }
+    this.UserList.set(existingUser)
 
+  }
+ 
 }

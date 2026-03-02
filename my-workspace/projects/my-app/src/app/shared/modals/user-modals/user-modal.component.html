@@ -1,0 +1,68 @@
+<div class="modal-header">
+    <h4 class="modal-title">
+        Inserisci i dati
+    </h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="FormGroup" (ngSubmit)="handleSubmitProgetto()">
+      <div class="mb-3">
+        <label class="form-label">ID</label>
+        <input type="text" class="form-control" formControlName="id">
+        <label class="form-label">
+          {{"Risorse.Cognome" | translate}}
+        </label>
+        <input type="text" class="form-control" formControlName="surname">
+        @if(FormGroup.controls.surname.errors?.['required']){
+          <div class="text-danger">
+            {{"Controlli.CampoObbligatorio" | translate}}
+          </div>
+        }
+        <label class="form-label">
+          {{"Risorse.Nome" | translate}}
+        </label>
+        <input type="text" class="form-control" formControlName="name">
+        @if(FormGroup.controls.name.errors?.['required']){
+          <div class="text-danger">
+            {{"Controlli.CampoObbligatorio" | translate}}
+          </div>
+        }
+        <label class="form-label">
+          {{"Risorse.Mansione" | translate}}
+        </label>
+        <input type="text" class="form-control" formControlName="role">
+        @if(FormGroup.controls.role.errors?.['required']){
+          <div class="text-danger">
+            {{"Controlli.CampoObbligatorio" | translate}}
+          </div>
+        }
+        <label class="form-label">
+          {{"Risorse.DataDiNascita" | translate}}
+        </label>
+        <input type="date" class="form-control" formControlName="dateBirth">
+        @if(FormGroup.controls.dateBirth.errors?.['required']){
+          <div class="text-danger">
+            {{"Controlli.CampoObbligatorio" | translate}}
+          </div>
+        }
+        
+        @if(FormGroup.controls.dateBirth.errors?.['birthDate']){
+          <div class="text-danger">
+            {{"Controlli.ControlloDataNascita" | translate}}
+          </div>
+        }
+        
+             
+      </div>
+      <button [disabled]="FormGroup.invalid" type="submit" class="btn btn-primary">
+        {{"Pulsanti.Invia" | translate}}
+      </button>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="activeModal.close('Close click')">
+        {{"Pulsanti.Chiudi" | translate}}
+    </button>
+</div>
+  
+

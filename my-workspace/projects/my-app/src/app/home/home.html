@@ -1,7 +1,62 @@
-<nav class="navbar bg-primary text-light">
-  <div class="container-md">
-    <a class="navbar-brand text-light" href="#">Navbar</a>
+<div class="d-flex flex-column min-vh-100">
+ 
+  <!--  NAVBAR -->
+  <nav class="navbar navbar-dark bg-dark px-3">
+    <div class="navbar-brand">
+      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+        <label class="btn btn-outline-light" for="btnradio1" (click)="ChangeItaliano()">Italiano</label>
+        
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label class="btn btn-outline-light" for="btnradio2" (click)="ChangeEnglish()">English</label>
+      </div>
+      
+      <a style="margin-left: 20px;">
+        {{"Nav.NomePagina" | translate}}
+      </a>
+ 
+    </div>
+ 
+ 
+  </nav>
+ 
+  <!--  CONTENUTO CENTRALE -->
+  <div class="d-flex flex-grow-1">
+ 
+    <!-- SIDEBAR -->
+    <aside class="bg-dark text-white p-3" style="width: 250px;">
+      <h5 class="text-uppercase">Menu</h5>
+      <ul class="nav flex-column">
+ 
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/home/resources">
+            {{"Nav.Risorse" | translate}}
+          </a>
+        </li>
+ 
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/home/projects">
+            {{"Nav.Progetti" | translate}}
+          </a>
+        </li>
+ 
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/home/presences">
+            {{"Nav.Associazioni" | translate}}
+          </a>
+        </li>
+ 
+      </ul>
+    </aside>
+ 
+    <!--  AREA CONTENUTO -->
+    <main class="flex-grow-1 p-4 bg-light">
+      <router-outlet></router-outlet>
+    </main>
+ 
   </div>
-</nav>
-
-<router-outlet />
+ 
+  <!--  FOOTER -->
+  <footer class="bg-dark text-white text-center py-3">
+    {{"Nav.Footer" | translate}} <!--roba a caso ma che fa figo-->
+  </footer>
