@@ -2,20 +2,22 @@ import { Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
+import { Footer } from '../shared/components/footer/footer';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.html',
   styleUrl: './home.css',
-  imports: [RouterOutlet, RouterLink, TranslatePipe]
+  imports: [RouterOutlet, RouterLink, TranslatePipe, Footer]
 })
 export class Home {
-    protected readonly traslateSVC = inject(TranslateService)
+  protected readonly traslateSVC = inject(TranslateService)
 
-  protected ChangeEnglish():void{
+  protected ChangeEnglish(): void {
     this.traslateSVC.use('en')
   }
 
-    protected ChangeItaliano():void{
+  protected ChangeItaliano(): void {
     this.traslateSVC.use('it')
   }
 }

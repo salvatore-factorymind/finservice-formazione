@@ -1,0 +1,13 @@
+<footer class="bg-dark text-white text-center py-3 d-flex gap-2 px-2">
+  <div>
+    <ng-content select="[footer-start]" />
+  </div>
+
+  <div class="flex-grow-1">
+    {{ textKey() | translate }}
+  </div>
+
+  <div>
+    <ng-content select="[footer-end]" />
+  </div>
+</footer>
