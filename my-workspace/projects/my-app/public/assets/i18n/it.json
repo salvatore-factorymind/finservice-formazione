@@ -15,7 +15,7 @@
     },
 
     "Pulsanti":{
-        "Aggiungi": "Add",
+        "Aggiungi": "Aggiungi",
         "Invia": "Invia",
         "Chiudi": "Chiudi"
     },
@@ -23,5 +23,7 @@
     "Controlli":{
         "CampoObbligatorio":"Campo obbligatorio",
         "ControlloDataNascita": "La data di nascita non può essere successiva a oggi"
-    }
+    },
+
+    "Caricamento" : "Caricamento"
 }

@@ -1,27 +1,33 @@
+@let isLoading = UserSvc.loading();
+
 <br>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
+                    @if(isLoading){
+                        <lib-loading-indicator></lib-loading-indicator>
+                    }@else{
                     
-                    <dx-data-grid [dataSource]="UserSvc.User()" (onRowClick)="handleRowClicked($event)" [showBorders]="true">
-                        <dxo-data-grid-filter-row [visible]="true"></dxo-data-grid-filter-row>
-                        <dxo-data-grid-editing mode="popup" [allowAdding]="false" [allowUpdating]="true" [allowDeleting]="true"></dxo-data-grid-editing>
+                            <dx-data-grid [dataSource]="UserSvc.User()" (onRowClick)="handleRowClicked($event)" [showBorders]="true">
+                                <dxo-data-grid-filter-row [visible]="true"></dxo-data-grid-filter-row>
+                                <dxo-data-grid-editing mode="popup" [allowAdding]="false" [allowUpdating]="true" [allowDeleting]="true"></dxo-data-grid-editing>
 
-                    <dxi-data-grid-column type="buttons">
-                        <!--<dxi-data-grid-button name="edit" icon="edit" text="Modifica"></dxi-data-grid-button>-->
-                        <dxi-data-grid-button name="delete" icon="trash" text="Elimina"></dxi-data-grid-button>
-                        <dxi-data-grid-button name="save" icon="save" text="Salva"></dxi-data-grid-button>
-                        <dxi-data-grid-button name="cancel" icon="close" text="Annulla"></dxi-data-grid-button>
-                    </dxi-data-grid-column>
-             
-                    <dxi-data-grid-column dataField="id" dataType="number" caption="ID" width="80"></dxi-data-grid-column>
-                    <dxi-data-grid-column dataField="surname" dataType="string" caption="{{'Risorse.Cognome' | translate}}"></dxi-data-grid-column>
-                    <dxi-data-grid-column dataField="name" dataType="string" caption="{{'Risorse.Nome' | translate}}"></dxi-data-grid-column>
-                    <dxi-data-grid-column dataField="role" dataType="string" caption="{{'Risorse.Mansione' | translate}}"></dxi-data-grid-column>
-                    <dxi-data-grid-column dataField="dateBirth" dataType="date" format="dd/MM/yyyy" caption="{{'Risorse.DataDiNascita' | translate}}"></dxi-data-grid-column>
-                </dx-data-grid>
+                            <dxi-data-grid-column type="buttons">
+                                <!--<dxi-data-grid-button name="edit" icon="edit" text="Modifica"></dxi-data-grid-button>-->
+                                <dxi-data-grid-button name="delete" icon="trash" text="Elimina"></dxi-data-grid-button>
+                                <dxi-data-grid-button name="save" icon="save" text="Salva"></dxi-data-grid-button>
+                                <dxi-data-grid-button name="cancel" icon="close" text="Annulla"></dxi-data-grid-button>
+                            </dxi-data-grid-column>
+                    
+                            <dxi-data-grid-column dataField="id" dataType="number" caption="ID" width="80"></dxi-data-grid-column>
+                            <dxi-data-grid-column dataField="surname" dataType="string" caption="{{'Risorse.Cognome' | translate}}"></dxi-data-grid-column>
+                            <dxi-data-grid-column dataField="name" dataType="string" caption="{{'Risorse.Nome' | translate}}"></dxi-data-grid-column>
+                            <dxi-data-grid-column dataField="role" dataType="string" caption="{{'Risorse.Mansione' | translate}}"></dxi-data-grid-column>
+                            <dxi-data-grid-column dataField="dateBirth" dataType="date" format="dd/MM/yyyy" caption="{{'Risorse.DataDiNascita' | translate}}"></dxi-data-grid-column>
+                        </dx-data-grid>
+                    }
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, RequiredValidator, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap'
 
 import { UserService } from '../../services/user.service';
@@ -28,7 +28,7 @@ export class UserModalComponent{
         surname: new FormControl<string | null>(null, Validators.required),
         name: new FormControl<string | null>(null, Validators.required),
         role: new FormControl<string | null>(null, Validators.required),
-        dateBirth: new FormControl<Date | null>(null, validBirthdate()),
+        dateBirth: new FormControl<Date | null>(null, [Validators.required, validBirthdate()]),
     })
 
     public ngOnInit(): void {
@@ -38,9 +38,15 @@ export class UserModalComponent{
     if(!!UserToEdit){
       this.FormGroup.patchValue(UserToEdit);
     }
-    }
+    
+    
+    this.FormGroup.controls.dateBirth.setValidators([
+      Validators.required,
+      validBirthdate()
+    ]);
+  }
 
-    protected handleSubmitProgetto():void{
+    protected handleSubmitUser():void{
         const formValue = this.FormGroup.getRawValue() as User;
         this.UserSvc.SaveUser(formValue)
 

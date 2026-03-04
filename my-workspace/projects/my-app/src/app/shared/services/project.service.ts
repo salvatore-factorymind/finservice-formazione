@@ -1,13 +1,13 @@
 import { Injectable, Signal, signal } from '@angular/core';
  
-import { Projects } from '../../home/projects/projects';
+import { Project } from '../models/models';
  
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
  
-private readonly ProjectList = signal<Projects[]>([
+private readonly ProjectList = signal<Project[]>([
    {
     id: 1,
     name: "E-commerce Platform",
@@ -24,7 +24,7 @@ private readonly ProjectList = signal<Projects[]>([
   }
 ])
  
-  public get CarBrand():Signal<Projects[]>{
+  public get CarBrand():Signal<Project[]>{
     return this.ProjectList.asReadonly();
   }
  

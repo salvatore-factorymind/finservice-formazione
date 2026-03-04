@@ -6,7 +6,7 @@ export interface User{
     dateBirth: Date
 }
 
-export interface Projects{
+export interface Project{
     id: number,
     name: string,
     description: string,

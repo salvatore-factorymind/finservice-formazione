@@ -23,5 +23,7 @@
     "Controlli": {
         "CampoObbligatorio": "Required field",
         "ControlloDataNascita": "Date of birth cannot be later than today"
-    }
+    },
+
+    "Caricamento" : "Loading"
 }

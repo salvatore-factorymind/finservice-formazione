@@ -1,12 +1,15 @@
-import { Injectable, Signal, signal } from '@angular/core';
+import { inject, Injectable, Signal, signal } from '@angular/core';
  
 import { User } from '../models/models';
+import { UserClientService } from './client/user-client.service';
+import { finalize } from 'rxjs';
  
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
- 
+private readonly UserClientSVC = inject(UserClientService)
+private readonly isLoading = signal(false)
 private readonly UserList = signal<User[]>([
     {
     id: 1,
@@ -55,5 +58,29 @@ private readonly UserList = signal<User[]>([
     this.UserList.set(existingUser)
 
   }
+
+  public get loading():Signal<boolean>{
+    return this.isLoading.asReadonly();
+  }
+
+   public init():void{
+    this.isLoading.set(true);
+
+    this.UserClientSVC.getUsers()
+    .pipe(
+      finalize(()=> this.isLoading.set(false))
+    )
+    .subscribe({
+      next: users => {
+        this.UserList.set(users);
+        this.isLoading.set(false)
+      },
+      error: err=> {
+        console.error(err);
+        this.isLoading.set(false)
+      },
+    });
+  }
+
  
 }

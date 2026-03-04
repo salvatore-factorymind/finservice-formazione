@@ -5,7 +5,7 @@
     <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
 </div>
 <div class="modal-body">
-    <form [formGroup]="FormGroup" (ngSubmit)="handleSubmitProgetto()">
+    <form [formGroup]="FormGroup" (ngSubmit)="handleSubmitUser()">
       <div class="mb-3">
         <label class="form-label">ID</label>
         <input type="text" class="form-control" formControlName="id">
@@ -50,8 +50,7 @@
           <div class="text-danger">
             {{"Controlli.ControlloDataNascita" | translate}}
           </div>
-        }
-        
+        }       
              
       </div>
       <button [disabled]="FormGroup.invalid" type="submit" class="btn btn-primary">
