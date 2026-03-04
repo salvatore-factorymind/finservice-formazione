@@ -1,3 +1,4 @@
+
 export interface User{
     id: number,
     surname: string,
@@ -5,8 +6,8 @@ export interface User{
     role: string,
     dateBirth: Date
 }
- 
-export interface Projects{
+  
+export interface Project{
     id: number,
     name: string,
     description: string,

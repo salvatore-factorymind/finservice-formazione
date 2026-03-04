@@ -1,0 +1,80 @@
+
+<div class="modal-header">
+	<h4 class="modal-title">Inserisci i dati</h4>
+	<button 
+		type="button" 
+		class="btn-close" 
+		aria-label="Close" 
+		(click)="activeModal.dismiss('Cross click')"
+	>
+	</button>
+</div>
+
+<div class="modal-body">
+<form [formGroup]="formGroup" (ngSubmit)="handleSubmit()">
+  <!--Id-->
+  <div class="mb-3">
+    <label class="form-label">Id</label>
+    <dx-number-box
+      formControlName="id"
+      [showSpinButtons]="true"
+      [useLargeSpinButtons]="true"
+      [min]="0"
+      [inputAttr]="{ 'aria-label': 'Id' }">
+    </dx-number-box>
+  </div>
+
+  <!--User-->
+  <div class="mb-3">
+    <label class="form-label">Utente</label>
+      <select class="form-select" formControlName="idUser">
+        <option [ngValue]="null">Seleziona utente</option>
+        <option *ngFor="let user of users()" [ngValue]="user.id">
+          {{ user.surname }} {{ user.name }}
+        </option>
+      </select>
+    @if (formGroup.controls['idUser'].invalid && formGroup.controls['idUser'].touched) {
+      <div class="text-danger">Campo obbligatorio</div>
+    }
+  </div>
+
+
+
+  <!--Progetto-->
+  <div class="mb-3">
+    <label class="form-label">Progetto</label>
+      <select class="form-select" formControlName="idProject">
+        <option [ngValue]="null">Seleziona progetto</option>
+        <option *ngFor="let project of projects()" [ngValue]="project.id">
+          {{ project.name }}
+        </option>
+      </select>
+      @if (formGroup.controls.idProject.errors?.['required']){
+      <div class="text-danger">Errore!</div>
+    }
+  </div>
+  <!--Ore-->
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Ore</label>
+      <dx-text-box
+        formControlName="hours"
+        [inputAttr]="{ 'aria-label': 'Title' }"
+      ></dx-text-box>
+      @if (formGroup.controls.hours.errors?.['required']){
+      <div class="text-danger">Errore!</div>
+    }
+  </div>
+  
+  <button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary">Invia</button>
+</form>
+</div>
+
+<div class="modal-footer">
+	<button 
+		type="button" 
+		class="btn btn-outline-secondary" 
+		(click)="activeModal.close('Close click')"
+	>
+		Chiudi
+	</button>
+</div>
