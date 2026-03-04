@@ -1,4 +1,3 @@
-
 export interface User{
     id: number,
     surname: string,
@@ -6,7 +5,6 @@ export interface User{
     role: string,
     dateBirth: Date
 }
-  
 export interface Project{
     id: number,
     name: string,

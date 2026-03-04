@@ -1,0 +1,29 @@
+{
+    "Nav": {
+        "NomePagina": "Rendicontazione Progetti",
+        "Risorse":"Risorse",
+        "Progetti": "Progetti",
+        "Associazioni": "Associazioni",
+        "Footer": "© 2026 Gestionale Progetti - Tutti i diritti riservati"
+    },
+
+    "Risorse":{
+        "Cognome":"Cognome",
+        "Nome": "Nome",
+        "Mansione":"Mansione",
+        "DataDiNascita": "Data di nascita"
+    },
+
+    "Pulsanti":{
+        "Aggiungi": "Aggiungi",
+        "Invia": "Invia",
+        "Chiudi": "Chiudi"
+    },
+
+    "Controlli":{
+        "CampoObbligatorio":"Campo obbligatorio",
+        "ControlloDataNascita": "La data di nascita non può essere successiva a oggi"
+    },
+
+    "Caricamento" : "Caricamento"
+}
