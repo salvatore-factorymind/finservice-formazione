@@ -1,5 +1,5 @@
 import { Injectable, Signal, signal } from '@angular/core';
-import { Union } from '../models/models';
+import { Union } from '../models/union-model';
  
 @Injectable({
   providedIn: 'root'
@@ -55,6 +55,16 @@ export class UnionService {
     this.unionList.set([...existingUnions]);
   }
 
+  // Elimina Unione
+  public deleteUnion(unionIdToDelete: number): void {
+    const indexToRemove = this.unionList().findIndex(union => union.id === unionIdToDelete);
+
+    this.unionList.update(union => {
+      union.splice(indexToRemove, 1);
+      return [...union];
+    })
+  }
+  // Elimina User
   public deleteUnionUser(userIdToDelete: number): void{
     this.unionList.update(unions => {
       for(let i = unions.length - 1; i >= 0; i--){
@@ -68,6 +78,7 @@ export class UnionService {
       return [...unions];
     });
   }
+  //Elimina Progetto
   public deleteUnionProject(projectIdToDelete: number): void{
     this.unionList.update(unions => {
       for(let i = unions.length - 1; i >= 0; i--){

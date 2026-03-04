@@ -1,11 +1,15 @@
-import { Injectable, Signal, signal } from '@angular/core';
-import { User } from '../models/models';
+import { inject, Injectable, Signal, signal } from '@angular/core';
+ 
+import { User } from '../models/user-model';
+import { UserClientService } from './client/user-client.service';
+import { finalize } from 'rxjs';
  
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
- 
+private readonly UserClientSVC = inject(UserClientService)
+private readonly isLoading = signal(false)
 private readonly UserList = signal<User[]>([
     {
     id: 1,
@@ -34,7 +38,49 @@ private readonly UserList = signal<User[]>([
   public get User():Signal<User[]>{
     return this.UserList.asReadonly();
   }
- 
+
+
+  public SaveUser(FormUser: User):void{
+    const existingUser = [...this.UserList()];
+
+    const existingUserIndex = existingUser.findIndex(User => User.id === FormUser.id)
+
+    if(existingUserIndex >= 0){
+      const existingContact = existingUser[existingUserIndex]
+      const updateContact = Object.assign({},existingContact, FormUser)
+      
+      existingUser.splice(existingUserIndex, 1, updateContact)
+    }else{
+      const MaxId = Math.max(...existingUser.map(User => User.id))+1
+      FormUser.id = MaxId
+      existingUser.push(FormUser);
+    }
+    this.UserList.set(existingUser)
+
+  }
+
+  public get loading():Signal<boolean>{
+    return this.isLoading.asReadonly();
+  }
+
+   public init():void{
+    this.isLoading.set(true);
+
+    this.UserClientSVC.getUsers()
+    .pipe(
+      finalize(()=> this.isLoading.set(false))
+    )
+    .subscribe({
+      next: users => {
+        this.UserList.set(users);
+        this.isLoading.set(false)
+      },
+      error: err=> {
+        console.error(err);
+        this.isLoading.set(false)
+      },
+    });
+  }
+
  
 }
- 

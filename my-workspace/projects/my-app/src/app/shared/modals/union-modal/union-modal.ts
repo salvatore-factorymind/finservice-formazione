@@ -6,7 +6,7 @@ import { DxDateBoxModule, DxNumberBoxModule, DxTextBoxModule } from 'devextreme-
 import { DxSelectBoxModule } from 'devextreme-angular';
 import { DxTagBoxModule, DxPopoverModule } from 'devextreme-angular';
 import { UnionService } from '../../service/union.service';
-import { Union } from '../../models/models';
+import { Union } from '../../models/union-model';
 import { UserService } from '../../service/user.service';
 import { ProjectService } from '../../service/project.service';
 import { CommonModule } from '@angular/common';
@@ -14,8 +14,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-union-modal',
   templateUrl: './union-modal.html',
-  styleUrls: ['./union-modal.css'],
-  imports: [ ReactiveFormsModule, TranslatePipe, DxTextBoxModule, DxNumberBoxModule, DxDateBoxModule, DxTagBoxModule, DxPopoverModule, DxSelectBoxModule, CommonModule],
+  imports: [ ReactiveFormsModule, DxTextBoxModule, DxNumberBoxModule, DxDateBoxModule, DxTagBoxModule, DxPopoverModule, DxSelectBoxModule, CommonModule],
 })
 export class UnionModal implements OnInit {
 	protected readonly activeModal = inject(NgbActiveModal);

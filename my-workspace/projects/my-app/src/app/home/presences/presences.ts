@@ -1,19 +1,22 @@
 import { Component, inject, signal } from '@angular/core';
 import { DxDataGridModule, DxDataGridTypes } from 'devextreme-angular/ui/data-grid';
 import { DxLookupModule } from 'devextreme-angular';
+import { DxButtonModule } from 'devextreme-angular';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { UnionService } from '../../shared/service/union.service';
 import { ProjectService } from '../../shared/service/project.service';
 import { UserService } from '../../shared/service/user.service';
-import { Union, User, Project } from '../../shared/models/models';
-import { UnionModal } from '../../shared/modale/union-modal/union-modal';
+import { Union } from '../../shared/models/union-model';
+import { User } from '../../shared/models/user-model';
+import { Project } from '../../shared/models/project-model';
+import { UnionModal } from '../../shared/modals/union-modal/union-modal';
 
 @Component({
   selector: 'app-presences',
   templateUrl: './presences.html',
   styleUrl: './presences.css',
-  imports: [DxDataGridModule, DxLookupModule]
+  imports: [DxDataGridModule, DxLookupModule, DxButtonModule]
 })
 export class Presences {
   protected readonly unionsSvc = inject(UnionService);
@@ -46,4 +49,14 @@ export class Presences {
     const modalRef = this.modalSvc.open(UnionModal);
     (modalRef.componentInstance as UnionModal).unionIdToEdit = 0;
   }
+
+
+
+  // Elimina riga tabella
+  onDeleteClick = (e: any) => {
+    e.event.stopPropagation();
+
+    const id = e.row.data.id;
+    this.unionsSvc.deleteUnion(id);
+  };
 }

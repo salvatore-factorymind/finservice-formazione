@@ -4,9 +4,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LoadingIndicator } from 'my-lib';
 
-import { User } from '../../shared/models/models';
+import { User } from '../../shared/models/user-model';
 import { UserModalComponent } from '../../shared/modals/user-modals/user-modal.component';
-import { UserService } from '../../shared/services/user.service';
+import { UserService } from '../../shared/service/user.service';
 
 @Component({
   selector: 'app-resources',

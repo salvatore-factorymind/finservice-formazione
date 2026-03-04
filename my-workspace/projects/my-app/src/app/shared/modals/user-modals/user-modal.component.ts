@@ -2,9 +2,9 @@ import { Component, inject } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, RequiredValidator, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap'
 
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../service/user.service';
 import { ActivatedRoute } from '@angular/router';
-import { User } from '../../models/models';
+import { User } from '../../models/user-model';
 import { TranslatePipe } from '@ngx-translate/core';
 
 
