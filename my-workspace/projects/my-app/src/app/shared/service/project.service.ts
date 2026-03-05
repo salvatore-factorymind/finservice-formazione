@@ -1,9 +1,8 @@
 import { Injectable, Signal, signal } from '@angular/core';
 import { Project } from '../models/project-model';
  
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class ProjectService {
  
 private readonly ProjectList = signal<Project[]>([

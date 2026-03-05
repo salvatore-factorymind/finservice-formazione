@@ -4,9 +4,8 @@ import { User } from '../models/user-model';
 import { UserClientService } from './client/user-client.service';
 import { finalize } from 'rxjs';
  
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class UserService {
 private readonly UserClientSVC = inject(UserClientService)
 private readonly isLoading = signal(false)
@@ -82,5 +81,13 @@ private readonly UserList = signal<User[]>([
     });
   }
 
+    public deleteUser(UserIdToDelete: number): void {
+    const indexToRemove = this.UserList().findIndex(user => user.id === UserIdToDelete);
+
+    this.UserList.update(user => {
+      user.splice(indexToRemove, 1);
+      return [...user];
+    })
+  }
  
 }

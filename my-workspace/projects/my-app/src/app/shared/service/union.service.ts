@@ -1,9 +1,8 @@
 import { Injectable, Signal, signal } from '@angular/core';
 import { Union } from '../models/union-model';
  
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class UnionService {
   private readonly unionList = signal<Union[]>([
     {

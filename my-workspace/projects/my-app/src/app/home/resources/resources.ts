@@ -7,6 +7,7 @@ import { LoadingIndicator } from 'my-lib';
 import { User } from '../../shared/models/user-model';
 import { UserModalComponent } from '../../shared/modals/user-modals/user-modal.component';
 import { UserService } from '../../shared/service/user.service';
+import { FunctionsService } from '../../shared/service/functions/functions.service';
 
 @Component({
   selector: 'app-resources',
@@ -15,6 +16,7 @@ import { UserService } from '../../shared/service/user.service';
   imports: [DxDataGridModule, TranslatePipe, LoadingIndicator]
 })
 export class Resources implements OnInit {
+  protected readonly FunctionsSvc = inject(FunctionsService)
   protected readonly UserSvc = inject(UserService);
   private readonly modalSvc = inject(NgbModal);
 
@@ -32,4 +34,11 @@ export class Resources implements OnInit {
     const modalRef = this.modalSvc.open(UserModalComponent);
     (modalRef.componentInstance as UserModalComponent).UserIdToEdit = IdUser.id;
   }
+
+    onDeleteClick = (e: any) => {
+    e.event.stopPropagation();
+
+    const id = e.row.data.id;
+    this.FunctionsSvc.delete(id, this.UserSvc.User());
+  };
 }
