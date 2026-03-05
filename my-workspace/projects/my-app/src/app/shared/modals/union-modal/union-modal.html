@@ -1,6 +1,5 @@
-
 <div class="modal-header">
-	<h4 class="modal-title">Inserisci i dati</h4>
+	<h4 class="modal-title">{{'association.modal.title' | translate}}</h4>
 	<button 
 		type="button" 
 		class="btn-close" 
@@ -14,11 +13,9 @@
 <form [formGroup]="formGroup" (ngSubmit)="handleSubmit()">
   <!--Id-->
   <div class="mb-3">
-    <label class="form-label">Id</label>
+    <label class="form-label">{{'association.modal.id' | translate}}</label>
     <dx-number-box
       formControlName="id"
-      [showSpinButtons]="true"
-      [useLargeSpinButtons]="true"
       [min]="0"
       [inputAttr]="{ 'aria-label': 'Id' }">
     </dx-number-box>
@@ -26,55 +23,54 @@
 
   <!--User-->
   <div class="mb-3">
-    <label class="form-label">Utente</label>
+    <label class="form-label">{{'association.modal.user' | translate}}</label>
       <select class="form-select" formControlName="idUser">
-        <option [ngValue]="null">Seleziona utente</option>
         <option *ngFor="let user of users()" [ngValue]="user.id">
           {{ user.surname }} {{ user.name }}
         </option>
       </select>
-    @if (formGroup.controls['idUser'].invalid && formGroup.controls['idUser'].touched) {
-      <div class="text-danger">Campo obbligatorio</div>
+    @if (formGroup.controls.idUser.errors?.['required']) {
+      <div class="text-danger">{{'association.control.required' | translate}}</div>
     }
   </div>
 
-
-
   <!--Progetto-->
   <div class="mb-3">
-    <label class="form-label">Progetto</label>
+    <label class="form-label">{{'association.modal.project' | translate}}</label>
       <select class="form-select" formControlName="idProject">
-        <option [ngValue]="null">Seleziona progetto</option>
         <option *ngFor="let project of projects()" [ngValue]="project.id">
           {{ project.name }}
         </option>
       </select>
       @if (formGroup.controls.idProject.errors?.['required']){
-      <div class="text-danger">Errore!</div>
+      <div class="text-danger">{{'association.control.required' | translate}}</div>
     }
   </div>
+
   <!--Ore-->
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Ore</label>
-      <dx-text-box
+    <label for="exampleInputEmail1" class="form-label">{{'association.modal.hour' | translate}}</label>
+      <dx-number-box
         formControlName="hours"
+        [showSpinButtons]="true"
+        [useLargeSpinButtons]="true"
         [inputAttr]="{ 'aria-label': 'Title' }"
-      ></dx-text-box>
+      ></dx-number-box>
       @if (formGroup.controls.hours.errors?.['required']){
-      <div class="text-danger">Errore!</div>
-    }
+        <div class="text-danger">{{'association.control.required' | translate}}</div>
+      } @else {
+        @if (formGroup.controls.hours.errors?.['hours']){
+          <div class="text-danger">{{'association.control.hour' | translate}}</div>
+        }
+      }
   </div>
   
-  <button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary">Invia</button>
+  <button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary">{{'association.modal.submit' | translate}}</button>
 </form>
 </div>
 
 <div class="modal-footer">
-	<button 
-		type="button" 
-		class="btn btn-outline-secondary" 
-		(click)="activeModal.close('Close click')"
-	>
-		Chiudi
+	<button type="button" class="btn btn-outline-secondary" (click)="activeModal.close('Close click')">
+	  {{'association.modal.close' | translate}}
 	</button>
 </div>

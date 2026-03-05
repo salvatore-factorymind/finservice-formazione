@@ -1,29 +1,73 @@
 {
-    "Nav": {
-        "NomePagina": "Rendicontazione Progetti",
-        "Risorse":"Risorse",
-        "Progetti": "Progetti",
-        "Associazioni": "Associazioni",
-        "Footer": "© 2026 Gestionale Progetti - Tutti i diritti riservati"
+    "nav": {
+        "page-name": "Rendicontazione Progetti",
+        "menu": "Menu",
+        "resource":"Risorse",
+        "project": "Progetti",
+        "association": "Associazioni",
+        "footer": "© 2026 Gestionale Progetti - Tutti i diritti riservati"
     },
 
-    "Risorse":{
-        "Cognome":"Cognome",
-        "Nome": "Nome",
-        "Mansione":"Mansione",
-        "DataDiNascita": "Data di nascita"
+    "resource": {
+        "title": "Risorse",
+        "table":{
+            "id": "Id",
+            "surname":"Cognome",
+            "name": "Nome",
+            "role":"Mansione",
+            "birthday-date": "Data di nascita",
+            "delete": "Elimina"
+        },
+        "modal": {
+            "title": "Inserisci i dati",
+            "id": "Id",
+            "surname": "Cognome",
+            "name": "Nome",
+            "role": "Mansione",
+            "birthday-date": "Data di nascita",
+            "submit": "Invia",
+            "close": "Chiudi"
+        },
+        "button":{
+            "add": "Aggiungi risorsa"
+        },
+        "control":{
+            "required":"Campo obbligatorio",
+            "birthday-date": "La data di nascita non può essere successiva a oggi"
+        }
+    },
+    
+    "project": {
+        
+    },
+    
+    "association": {
+        "title": "Associazioni",
+        "table": {
+            "id": "Id",
+            "surname-name": "Cognome Nome",
+            "project": "Progetto",
+            "project-duration": "Durata Progetto",
+            "hour": "Ore",
+            "delete": "Elimina"
+        },
+        "modal": {
+            "title": "Inserisci i dati",
+            "id": "Id",
+            "user": "Utente",
+            "project": "Progetto",
+            "hour": "Ore",
+            "submit": "Invia",
+            "close": "Chiudi"
+        },
+        "button": {
+            "add": "Aggiungi associazione"
+        },
+        "control":{
+            "required":"Campo obbligatorio",
+            "hour": "Le ore devono essere maggiori di 0"
+        }
     },
 
-    "Pulsanti":{
-        "Aggiungi": "Aggiungi",
-        "Invia": "Invia",
-        "Chiudi": "Chiudi"
-    },
-
-    "Controlli":{
-        "CampoObbligatorio":"Campo obbligatorio",
-        "ControlloDataNascita": "La data di nascita non può essere successiva a oggi"
-    },
-
-    "Caricamento" : "Caricamento"
+    "loading" : "Caricamento"
 }

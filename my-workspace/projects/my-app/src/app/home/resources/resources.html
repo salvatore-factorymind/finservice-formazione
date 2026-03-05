@@ -1,6 +1,5 @@
 @let isLoading = UserSvc.loading();
-
-<br>
+<h3><b>{{'resource.title' | translate}}</b></h3>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -16,23 +15,27 @@
               [allowDeleting]="true"></dxo-data-grid-editing>
 
 
-            <dxi-column type="buttons" caption="Elimina">
+            
+
+            <dxi-data-grid-column dataField="id" dataType="number" caption="{{'resource.table.id' | translate}}" width="80"></dxi-data-grid-column>
+            <dxi-data-grid-column dataField="surname" dataType="string"
+              caption="{{'resource.table.surname' | translate}}"></dxi-data-grid-column>
+            <dxi-data-grid-column dataField="name" dataType="string"
+              caption="{{'resource.table.name' | translate}}"></dxi-data-grid-column>
+            <dxi-data-grid-column dataField="role" dataType="string"
+              caption="{{'resource.table.role' | translate}}"></dxi-data-grid-column>
+            <dxi-data-grid-column dataField="dateBirth" dataType="date" format="dd/MM/yyyy"
+              caption="{{'resource.table.birthday-date' | translate}}"></dxi-data-grid-column>
+
+
+
+              <dxi-column type="buttons" caption="{{'resource.table.delete' | translate}}">
                 <dxi-button 
                     hint="Elimina"
                     icon="trash"
                     [onClick]="onDeleteClick">
                 </dxi-button>
             </dxi-column>
-
-            <dxi-data-grid-column dataField="id" dataType="number" caption="ID" width="80"></dxi-data-grid-column>
-            <dxi-data-grid-column dataField="surname" dataType="string"
-              caption="{{'Risorse.Cognome' | translate}}"></dxi-data-grid-column>
-            <dxi-data-grid-column dataField="name" dataType="string"
-              caption="{{'Risorse.Nome' | translate}}"></dxi-data-grid-column>
-            <dxi-data-grid-column dataField="role" dataType="string"
-              caption="{{'Risorse.Mansione' | translate}}"></dxi-data-grid-column>
-            <dxi-data-grid-column dataField="dateBirth" dataType="date" format="dd/MM/yyyy"
-              caption="{{'Risorse.DataDiNascita' | translate}}"></dxi-data-grid-column>
           </dx-data-grid>
           }
         </div>
@@ -40,7 +43,7 @@
     </div>
   </div>
   <br>
-  <button type="button" class="btn btn-outline-success" (click)="handleNewUser()">
-    {{'Pulsanti.Aggiungi' | translate}}
+  <button type="button" class="btn btn-dark" (click)="handleNewUser()">
+    {{'resource.button.add' | translate}}
   </button>
 </div>

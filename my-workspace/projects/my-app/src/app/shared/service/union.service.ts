@@ -46,9 +46,12 @@ export class UnionService {
       existingUnions.splice(existingUnionsIndex, 1, updatedProject);
     } else {
       // Create
-      const maxId = Math.max(...existingUnions.map(union => union.id));
-      formUnion.id = maxId + 1;
-      existingUnions.push(formUnion);
+      let maxId = 0;
+      if (existingUnions.length > 0) {
+        maxId = Math.max(...existingUnions.map(union => union.id));
+      }
+      const newUnion = { ...formUnion, id: maxId + 1 };
+      existingUnions.push(newUnion);
     }
 
     this.unionList.set([...existingUnions]);

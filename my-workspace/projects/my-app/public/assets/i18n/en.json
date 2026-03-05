@@ -1,29 +1,73 @@
 {
-    "Nav": {
-        "NomePagina": "Project Reporting",
-        "Risorse": "Resources",
-        "Progetti": "Projects",
-        "Associazioni": "Associations",
-        "Footer": "© 2026 Project Management System - All rights reserved"
+    "nav": {
+        "page-name": "Project Reporting",
+        "menu": "Menu",
+        "resource": "Resources",
+        "project": "Projects",
+        "association": "Associations",
+        "footer": "© 2026 Project Management System - All rights reserved"
     },
 
-    "Risorse": {
-        "Cognome": "Last Name",
-        "Nome": "First Name",
-        "Mansione": "Role",
-        "DataDiNascita": "Date of Birth"
+    "resource": {
+        "title": "Resources",
+        "table": {
+            "id": "Id",
+            "surname": "Surname",
+            "name": "Name",
+            "role": "Role",
+            "birthday-date": "Birth Date",
+            "delete": "Delete"
+        },
+        "modal": {
+            "title": "Enter data",
+            "id": "Id",
+            "surname": "Surname",
+            "name": "Name",
+            "role": "Role",
+            "birthday-date": "Birth Date",
+            "submit": "Submit",
+            "close": "Close"
+        },
+        "button": {
+            "add": "Add resource"
+        },
+        "control": {
+            "required": "Required field",
+            "birthday-date": "Birth date cannot be later than today"
+        }
     },
 
-    "Pulsanti": {
-        "Aggiungi": "Add",
-        "Invia": "Submit",
-        "Chiudi": "Close"
+    "project": {
+
     },
 
-    "Controlli": {
-        "CampoObbligatorio": "Required field",
-        "ControlloDataNascita": "Date of birth cannot be later than today"
+    "association": {
+        "title": "Associations",
+        "table": {
+            "id": "Id",
+            "surname-name": "Surname Name",
+            "project": "Project",
+            "project-duration": "Project Duration",
+            "hour": "Hours",
+            "delete": "Delete"
+        },
+        "modal": {
+            "title": "Enter data",
+            "id": "Id",
+            "user": "User",
+            "project": "Project",
+            "hour": "Hours",
+            "submit": "Submit",
+            "close": "Close"
+        },
+        "button": {
+            "add": "Add association"
+        },
+        "control": {
+            "required": "Required field",
+            "hour": "Hours must be greater than 0"
+        }
     },
 
-    "Caricamento" : "Loading"
+    "loading": "Loading"
 }

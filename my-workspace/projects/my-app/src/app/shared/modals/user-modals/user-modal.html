@@ -1,66 +1,63 @@
 <div class="modal-header">
-    <h4 class="modal-title">
-        Inserisci i dati
-    </h4>
+    <h4 class="modal-title">{{'resource.modal.title' | translate}}</h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
 </div>
 <div class="modal-body">
     <form [formGroup]="FormGroup" (ngSubmit)="handleSubmitUser()">
       <div class="mb-3">
-        <label class="form-label">ID</label>
+        <label class="form-label">{{'resource.modal.id' | translate}}</label>
         <input type="text" class="form-control" formControlName="id">
         <label class="form-label">
-          {{"Risorse.Cognome" | translate}}
+          {{'resource.modal.surname' | translate}}
         </label>
         <input type="text" class="form-control" formControlName="surname">
         @if(FormGroup.controls.surname.errors?.['required']){
           <div class="text-danger">
-            {{"Controlli.CampoObbligatorio" | translate}}
+            {{"resource.control.required" | translate}}
           </div>
         }
         <label class="form-label">
-          {{"Risorse.Nome" | translate}}
+          {{'resource.modal.name' | translate}}
         </label>
         <input type="text" class="form-control" formControlName="name">
         @if(FormGroup.controls.name.errors?.['required']){
           <div class="text-danger">
-            {{"Controlli.CampoObbligatorio" | translate}}
+            {{"resource.control.required" | translate}}
           </div>
         }
         <label class="form-label">
-          {{"Risorse.Mansione" | translate}}
+          {{'resource.modal.role' | translate}}
         </label>
         <input type="text" class="form-control" formControlName="role">
         @if(FormGroup.controls.role.errors?.['required']){
           <div class="text-danger">
-            {{"Controlli.CampoObbligatorio" | translate}}
+            {{"resource.control.required" | translate}}
           </div>
         }
         <label class="form-label">
-          {{"Risorse.DataDiNascita" | translate}}
+          {{'resource.modal.birthday-date' | translate}}
         </label>
         <input type="date" class="form-control" formControlName="dateBirth">
         @if(FormGroup.controls.dateBirth.errors?.['required']){
           <div class="text-danger">
-            {{"Controlli.CampoObbligatorio" | translate}}
+            {{"resource.control.required" | translate}}
           </div>
-        }
-        
-        @if(FormGroup.controls.dateBirth.errors?.['birthDate']){
-          <div class="text-danger">
-            {{"Controlli.ControlloDataNascita" | translate}}
-          </div>
-        }       
-             
+        } @else {
+          @if(FormGroup.controls.dateBirth.errors?.['birthDate']){
+            <div class="text-danger">
+              {{"resource.control.birthday-date" | translate}}
+            </div>
+          }    
+        } 
       </div>
       <button [disabled]="FormGroup.invalid" type="submit" class="btn btn-primary">
-        {{"Pulsanti.Invia" | translate}}
+        {{'resource.modal.submit' | translate}}
       </button>
     </form>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-outline-secondary" (click)="activeModal.close('Close click')">
-        {{"Pulsanti.Chiudi" | translate}}
+        {{'resource.modal.close' | translate}}
     </button>
 </div>
   

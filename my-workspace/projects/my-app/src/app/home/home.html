@@ -11,18 +11,13 @@
           autocomplete="off"
           checked
         />
-        <label class="btn btn-outline-light" for="btnradio1" (click)="ChangeItaliano()"
-          >Italiano</label
-        >
-
+        <label class="btn btn-outline-light" for="btnradio1" (click)="ChangeItaliano()">Italiano</label>
         <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
-        <label class="btn btn-outline-light" for="btnradio2" (click)="ChangeEnglish()"
-          >English</label
-        >
+        <label class="btn btn-outline-light" for="btnradio2" (click)="ChangeEnglish()">English</label>
       </div>
 
       <a class="ms-4">
-        {{ 'Nav.NomePagina' | translate }}
+        {{ "nav.page-name" | translate }}
       </a>
     </div>
   </nav>
@@ -31,23 +26,23 @@
   <div class="d-flex flex-grow-1">
     <!-- SIDEBAR -->
     <aside class="bg-dark text-white p-3" style="width: 250px">
-      <h5 class="text-uppercase">Menu</h5>
+      <h5 class="text-uppercase">{{ "nav.menu" | translate }}</h5>
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link text-white" routerLink="/home/resources">
-            {{ 'Nav.Risorse' | translate }}
+            {{ "nav.resource" | translate }}
           </a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link text-white" routerLink="/home/projects">
-            {{ 'Nav.Progetti' | translate }}
+            {{ "nav.project" | translate }}
           </a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link text-white" routerLink="/home/presences">
-            {{ 'Nav.Associazioni' | translate }}
+            {{ "nav.association" | translate }}
           </a>
         </li>
       </ul>
@@ -60,5 +55,5 @@
   </div>
 
   <!--  FOOTER -->
-  <app-footer textKey="Nav.Footer" />
+  <app-footer textKey="nav.footer" />
 </div>

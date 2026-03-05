@@ -11,12 +11,13 @@ import { Union } from '../../shared/models/union-model';
 import { User } from '../../shared/models/user-model';
 import { Project } from '../../shared/models/project-model';
 import { UnionModal } from '../../shared/modals/union-modal/union-modal';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-presences',
   templateUrl: './presences.html',
   styleUrl: './presences.css',
-  imports: [DxDataGridModule, DxLookupModule, DxButtonModule]
+  imports: [DxDataGridModule, DxLookupModule, DxButtonModule, TranslatePipe]
 })
 export class Presences {
   protected readonly unionsSvc = inject(UnionService);
@@ -53,7 +54,7 @@ export class Presences {
 
 
   // Elimina riga tabella
-  onDeleteClick = (e: any) => {
+  protected onDeleteClick = (e: any) => {
     e.event.stopPropagation();
 
     const id = e.row.data.id;

@@ -11,7 +11,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-modal',
-  templateUrl: './user-modal.component.html',
+  templateUrl: './user-modal.html',
   imports: [ReactiveFormsModule, FormsModule, TranslatePipe]
 })
 

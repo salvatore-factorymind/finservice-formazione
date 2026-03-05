@@ -3,12 +3,14 @@ import { inject, Injectable, Signal, signal } from '@angular/core';
 import { User } from '../models/user-model';
 import { UserClientService } from './client/user-client.service';
 import { finalize } from 'rxjs';
+import { UnionService } from './union.service';
  
 @Injectable()
 
 export class UserService {
-private readonly UserClientSVC = inject(UserClientService)
-private readonly isLoading = signal(false)
+private readonly userClientSVC = inject(UserClientService);
+private readonly unionsSvc = inject(UnionService);
+private readonly isLoading = signal(false);
 private readonly UserList = signal<User[]>([
     {
     id: 1,
@@ -50,12 +52,16 @@ private readonly UserList = signal<User[]>([
       
       existingUser.splice(existingUserIndex, 1, updateContact)
     }else{
-      const MaxId = Math.max(...existingUser.map(User => User.id))+1
-      FormUser.id = MaxId
-      existingUser.push(FormUser);
+      // Create modificato (Matteo)
+      let maxId = 0;
+      if (existingUser.length > 0) {
+        maxId = Math.max(...existingUser.map(union => union.id));
+      }
+      const newUnion = { ...FormUser, id: maxId + 1 };
+      existingUser.push(newUnion);
     }
+    
     this.UserList.set(existingUser)
-
   }
 
   public get loading():Signal<boolean>{
@@ -65,7 +71,7 @@ private readonly UserList = signal<User[]>([
    public init():void{
     this.isLoading.set(true);
 
-    this.UserClientSVC.getUsers()
+    this.userClientSVC.getUsers()
     .pipe(
       finalize(()=> this.isLoading.set(false))
     )
@@ -82,12 +88,16 @@ private readonly UserList = signal<User[]>([
   }
 
     public deleteUser(UserIdToDelete: number): void {
-    const indexToRemove = this.UserList().findIndex(user => user.id === UserIdToDelete);
+      const indexToRemove = this.UserList().findIndex(user => user.id === UserIdToDelete);
 
-    this.UserList.update(user => {
-      user.splice(indexToRemove, 1);
-      return [...user];
-    })
-  }
+      // Funzione cancella user in union
+      console.log("INDICE UTENTE DA CANCELLARE: ", UserIdToDelete)
+      this.unionsSvc.deleteUnionUser(UserIdToDelete);
+
+      this.UserList.update(user => {
+        user.splice(indexToRemove, 1);
+        return [...user];
+      })
+    }
  
 }

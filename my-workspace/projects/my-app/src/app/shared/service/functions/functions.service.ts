@@ -10,10 +10,10 @@ export class FunctionsService {
 */
   public delete(IdToDelete: number, lista: any[]): void{
     const indexToRemove = lista.findIndex(array => array.id === IdToDelete);
-
+    /*
     lista.update(array => {
       array.splice(indexToRemove, 1);
       return [...array];
-    })
+    })*/
   }
 }
