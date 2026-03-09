@@ -38,7 +38,24 @@
     },
 
     "project": {
-
+        "button": {
+            "add": "Add",
+            "delete": "Delete"
+        },
+        "table": {
+            "id": "Id",
+            "name": "Project name",
+            "description": "Description",
+            "date-start": "Start date",
+            "date-finish": "End date",
+            "delete": "Delete",
+            "submit": "Submit",
+            "close": "Close"
+        },
+        "control": {
+            "required": "Required field",
+            "dateFinish": "The end date cannot be later than the project start date"
+        }  
     },
 
     "association": {

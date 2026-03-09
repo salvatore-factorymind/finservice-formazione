@@ -1,0 +1,61 @@
+<div class="modal-header">
+    <h4 class="modal-title">
+        Inserisci i dati
+    </h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="formGroup" (ngSubmit)="handleSubmitProject()">
+      <div class="mb-3">
+ 
+        <label class="form-label">{{"project.table.id" | translate}}</label>
+        <input type="text" class="form-control" formControlName="id">
+ 
+        <label class="form-label">{{"project.table.name" | translate}}</label>
+        <input type="text" class="form-control" formControlName="name">
+        @if(formGroup.controls.name.errors?.['required']){
+          <div class="text-danger">
+            {{"project.control.required" | translate}}
+          </div>
+        }
+ 
+        <label class="form-label">{{"project.table.description" | translate}}</label>
+        <input type="text" class="form-control" formControlName="description">
+        @if(formGroup.controls.description.errors?.['required']){
+          <div class="text-danger">
+            {{"project.control.required" | translate}}
+          </div>
+        }
+ 
+        <label class="form-label">{{"project.table.date-start" | translate}}</label>
+        <input type="date" class="form-control" formControlName="dateStart">
+        @if(formGroup.controls.dateStart.errors?.['required']){
+          <div class="text-danger">
+            {{"project.control.required" | translate}}
+          </div>
+        }
+ 
+        <label class="form-label">{{"project.table.date-finish" | translate}}</label>
+        <input type="date" class="form-control" formControlName="dateFinish">
+        @if(formGroup.controls.dateFinish.errors?.['required']){
+          <div class="text-danger">
+            {{"project.control.required" | translate}}
+          </div>
+        }
+        @if(formGroup.controls.dateFinish.errors?.['dateF']){
+          <div class="text-danger">
+            {{"project.control.dateFinish" | translate}}
+          </div>
+        }
+             
+      </div>
+      <button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary">
+        {{"project.table.submit" | translate}}
+      </button>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="activeModal.close('Close click')">
+        {{"project.table.close" | translate}}
+    </button>
+</div>

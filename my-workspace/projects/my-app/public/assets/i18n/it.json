@@ -38,7 +38,24 @@
     },
     
     "project": {
-        
+        "button": {
+            "add": "Aggiungi",
+            "delete": "Elimina"
+        },
+        "table": {
+            "id": "Id",
+            "name": "Nome progetto",
+            "description": "Descrizione",
+            "date-start": "Data d'inizio",
+            "date-finish": "Data di fine",
+            "delete": "Elimina",
+            "submit": "Invia",
+            "close": "Chiudi"
+        },
+        "control": {
+            "required": "Campo obbligatorio",
+            "dateFinish": "La data di fine non può essere superiore alla data di inizio del progetto"
+        }  
     },
     
     "association": {

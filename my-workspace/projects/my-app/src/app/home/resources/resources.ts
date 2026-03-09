@@ -7,6 +7,7 @@ import { LoadingIndicator } from 'my-lib';
 import { User } from '../../shared/models/user-model';
 import { UserModalComponent } from '../../shared/modals/user-modals/user-modal';
 import { UserService } from '../../shared/service/user.service';
+import { FunctionsService } from '../../shared/service/functions/functions.service';
 
 @Component({
   selector: 'app-resources',
@@ -15,7 +16,7 @@ import { UserService } from '../../shared/service/user.service';
   imports: [DxDataGridModule, TranslatePipe, LoadingIndicator]
 })
 export class Resources implements OnInit {
-  // protected readonly FunctionsSvc = inject(FunctionsService)
+  protected readonly FunctionsSvc = inject(FunctionsService);
   protected readonly UserSvc = inject(UserService);
   private readonly modalSvc = inject(NgbModal);
 
@@ -39,6 +40,6 @@ export class Resources implements OnInit {
 
     const id = e.row.data.id;
     this.UserSvc.deleteUser(id);
-    // this.FunctionsSvc.delete(id, this.UserSvc.User());
+    this.FunctionsSvc.delete(id, this.UserSvc.User());
   };
 }

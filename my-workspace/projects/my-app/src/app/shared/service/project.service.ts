@@ -1,8 +1,10 @@
 import { Injectable, Signal, signal } from '@angular/core';
 import { Project } from '../models/project-model';
+
+ 
+ 
  
 @Injectable()
-
 export class ProjectService {
  
 private readonly ProjectList = signal<Project[]>([
@@ -26,5 +28,36 @@ private readonly ProjectList = signal<Project[]>([
     return this.ProjectList.asReadonly();
   }
  
+  public getProject(projectId: number): Project | undefined{
+    return this.ProjectList().find(project => project.id === projectId);
+  }
  
+ public saveProject(formProject: Project): void{
+    const existingProjects = this.ProjectList();
+ 
+    const existingProjectIndex = existingProjects.findIndex(project => project.id === formProject.id);
+ 
+    if(existingProjectIndex >= 0){
+      const existingProject = existingProjects[existingProjectIndex];
+ 
+      const updatedProject = Object.assign({}, existingProject, formProject);
+ 
+      existingProjects.splice(existingProjectIndex, 1, updatedProject);
+    }else{
+      const maxId=Math.max(...existingProjects.map(project => project.id));
+      formProject.id=maxId + 1;
+      existingProjects.push(formProject);
+    }
+ 
+    this.ProjectList.set([...existingProjects]);
+ }
+
+ public deleteProject(projectIdToDelete: number): void {
+    const indexToRemove = this.ProjectList().findIndex(project => project.id === projectIdToDelete);
+
+    this.ProjectList.update(project => {
+      project.splice(indexToRemove, 1);
+      return [...project];
+    })
+  }
 }
