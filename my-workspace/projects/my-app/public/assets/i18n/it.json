@@ -1,6 +1,6 @@
 {
     "nav": {
-        "page-name": "Rendicontazione Progetti",
+        "page-name": "RENDICONTAZIONE PROGETTI",
         "menu": "Menu",
         "resource":"Risorse",
         "project": "Progetti",
@@ -42,6 +42,7 @@
             "add": "Aggiungi",
             "delete": "Elimina"
         },
+        "title": "Progetti",
         "table": {
             "id": "Id",
             "name": "Nome progetto",

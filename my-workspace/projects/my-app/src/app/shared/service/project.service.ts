@@ -1,5 +1,6 @@
 import { inject, Injectable, Signal, signal } from '@angular/core';
 import { Project } from '../models/project-model';
+import { UnionService } from './union.service';
 import { FunctionsService } from './functions/functions.service';
 
  
@@ -7,6 +8,7 @@ import { FunctionsService } from './functions/functions.service';
  
 @Injectable()
 export class ProjectService {
+private readonly unionsSvc = inject(UnionService);
  
   private readonly functionSvc = inject(FunctionsService);
 private readonly ProjectList = signal<Project[]>([
@@ -57,9 +59,9 @@ private readonly ProjectList = signal<Project[]>([
  public deleteProject(projectIdToDelete: number): void {
     const indexToRemove = this.ProjectList().findIndex(project => project.id === projectIdToDelete);
 
-    //this.unionsSvc.deleteUnionUser(UserIdToDelete);
-
-
+    // Funzione cancella user in union
+    console.log("INDICE PROGETTO DA CANCELLARE: ", projectIdToDelete)
+    this.unionsSvc.deleteUnionProject(projectIdToDelete);
 
     this.ProjectList.update(project => {
 

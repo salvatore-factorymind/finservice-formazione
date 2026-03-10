@@ -1,25 +1,29 @@
 <div class="container">
+    <h3><b>{{'project.title' | translate}}</b></h3><br>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <dx-data-grid [dataSource]="projectSvc.Project()" (onRowClick)="handleRowClicked($event)" [showBorders]="true">
-                    <dxo-data-grid-filter-row [visible]="true"></dxo-data-grid-filter-row>
-                    <dxi-data-grid-column dataField="id" dataType="number" caption="{{'project.table.id' | translate}}"></dxi-data-grid-column>
-                    <dxi-data-grid-column dataField="name" dataType="string" caption="{{'project.table.name' | translate}}"></dxi-data-grid-column>
-                    <dxi-data-grid-column dataField="description" dataType="string" caption="{{'project.table.description' | translate}}"></dxi-data-grid-column>
-                    <dxi-data-grid-column dataField="dateStart" dataType="date" format="dd/MM/yyyy" caption="{{'project.table.date-start' | translate}}"></dxi-data-grid-column>
-                    <dxi-data-grid-column dataField="dateFinish" dataType="date" format="dd/MM/yyyy" caption="{{'project.table.date-finish' | translate}}"></dxi-data-grid-column>
- 
-                    <dxi-column type="buttons" caption="{{'project.button.delete' | translate}}">
-                        <dxi-button
-                            hint="Delete"
-                            icon="trash"
-                            [onClick]="handleDeleteClick">
-                        </dxi-button>
-                    </dxi-column>
-                </dx-data-grid>
+                <div class="card-body">
+                    <dx-data-grid [dataSource]="projectSvc.Project()" (onRowClick)="handleRowClicked($event)" [showBorders]="true">
+                        <dxo-data-grid-filter-row [visible]="true"></dxo-data-grid-filter-row>
+                        <dxi-data-grid-column dataField="id" dataType="number" caption="{{'project.table.id' | translate}}"></dxi-data-grid-column>
+                        <dxi-data-grid-column dataField="name" dataType="string" caption="{{'project.table.name' | translate}}"></dxi-data-grid-column>
+                        <dxi-data-grid-column dataField="description" dataType="string" caption="{{'project.table.description' | translate}}"></dxi-data-grid-column>
+                        <dxi-data-grid-column dataField="dateStart" dataType="date" format="dd/MM/yyyy" caption="{{'project.table.date-start' | translate}}"></dxi-data-grid-column>
+                        <dxi-data-grid-column dataField="dateFinish" dataType="date" format="dd/MM/yyyy" caption="{{'project.table.date-finish' | translate}}"></dxi-data-grid-column>
+    
+                        <dxi-column type="buttons" caption="{{'project.button.delete' | translate}}">
+                            <dxi-button
+                                hint="Delete"
+                                icon="trash"
+                                [onClick]="handleDeleteClick">
+                            </dxi-button>
+                        </dxi-column>
+                    </dx-data-grid>
+                </div>
             </div>
         </div>
     </div>
-    <button type="button" class="btn btn-primary" (click)="handleNewProject()">{{'project.button.add' | translate}}</button>
+    <br>
+    <button type="button" class="btn btn-dark" (click)="handleNewProject()">{{'project.button.add' | translate}} {{'project.title' | translate | lowercase}}</button>
 </div>

@@ -1,36 +1,32 @@
 <div class="d-flex flex-column min-vh-100">
   <!--  NAVBAR -->
+    
   <nav class="navbar navbar-dark bg-dark px-3">
-  <div class="container-fluid d-flex align-items-center">
-
-    <!-- SINISTRA -->
-    <button type="button" class="btn btn-outline-light" (click)="openMenu()">Mostra menu</button>
-
-    <!-- CENTRO -->
-    <h1><div class="mx-auto text-white fw-bold">{{ "nav.page-name" | translate }}</div></h1>
-
-    <!-- DESTRA -->
-    <div class="btn-group" role="group">
-      <input
-        type="radio"
-        class="btn-check"
-        name="btnradio"
-        id="btnradio1"
-        autocomplete="off"
-        checked
-      />
-      <label class="btn btn-outline-light" for="btnradio1" (click)="ChangeItaliano()">Italiano</label>
-
-      <input
-        type="radio"
-        class="btn-check"
-        name="btnradio"
-        id="btnradio2"
-        autocomplete="off"
-      />
-      <label class="btn btn-outline-light" for="btnradio2" (click)="ChangeEnglish()">English </label></div>
-  </div>
-</nav>
+    <div class="container-fluid">
+      <div class="row w-100" style="align-items: center;">
+          <div class="col-5">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+              <input
+                type="radio"
+                class="btn-check"
+                name="btnradio"
+                id="btnradio1"
+                autocomplete="off"
+                checked
+              />
+              <label class="btn btn-outline-light" for="btnradio1" (click)="ChangeItaliano()">Italiano</label>
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
+              <label class="btn btn-outline-light" for="btnradio2" (click)="ChangeEnglish()">English</label>
+            </div>
+          </div>
+          <div class="col-7">
+            <h1 style="color:white;">
+              {{ "nav.page-name" | translate }}
+            </h1>
+          </div>
+      </div>
+    </div>
+  </nav>
 
   <!--  CONTENUTO CENTRALE -->
   <div class="d-flex flex-grow-1">
@@ -40,6 +36,11 @@
     <aside class="bg-dark text-white p-3" style="width: 250px">
       <h5 class="text-uppercase">{{ "nav.menu" | translate }}</h5>
       <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/home/dashboard">
+            Dashboard
+          </a>
+        </li>
         <li class="nav-item">
           <a class="nav-link text-white" routerLink="/home/resources">
             {{ "nav.resource" | translate }}

@@ -6,12 +6,13 @@ import { ProjectService } from '../../shared/service/project.service';
 import { ProjectModalComponent } from '../../shared/modals/projects-modals/project-modal';
 import { Project } from '../../shared/models/project-model';
 import { FunctionsService } from '../../shared/service/functions/functions.service';
+import { LowerCasePipe } from '@angular/common';
  
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.html',
   styleUrl: './projects.css',
-  imports: [DxDataGridModule, TranslatePipe]
+  imports: [DxDataGridModule, TranslatePipe, LowerCasePipe]
 })
 export class Projects {
   protected readonly projectSvc = inject(ProjectService);
