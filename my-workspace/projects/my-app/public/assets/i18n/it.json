@@ -20,7 +20,15 @@
     },
     
     "project": {
-        
+        "table": {
+            "name": "Nome progetto",
+            "description": "Descrizione",
+            "date-start": "Data d'inizio",
+            "date-finish": "Data di fine"
+        },
+        "control": {
+            "dateFinish": "La data di fine non può essere superiore alla data di inizio del progetto"
+        }  
     },
     
     "association": {
@@ -46,7 +54,6 @@
             "add": "Aggiungi associazione"
         },
         "control":{
-            "required":"Campo obbligatorio",
             "hour": "Le ore devono essere maggiori di 0"
         }
     },

@@ -10,36 +10,37 @@
 
     "resource": {
         "title": "Resources",
-        "surname": "Surname",
-        "name": "Name",
-        "role": "Role",
-        "birthday-date": "Date of birth",
-        "control": {
-            "birthday-date": "The birth date cannot be later than today"
-        }
-    },
-    
-    "project": {
-        "button": {
-            "add": "Add",
-            "delete": "Delete"
-        },
         "table": {
             "id": "Id",
-            "name": "Project name",
-            "description": "Description",
-            "date-start": "Start date",
-            "date-finish": "End date",
-            "delete": "Delete",
+            "surname": "Surname",
+            "name": "Name",
+            "role": "Role",
+            "birthday-date": "Birth Date",
+            "delete": "Delete"
+        },
+        "modal": {
+            "title": "Enter data",
+            "id": "Id",
+            "surname": "Surname",
+            "name": "Name",
+            "role": "Role",
+            "birthday-date": "Birth Date",
             "submit": "Submit",
             "close": "Close"
         },
+        "button": {
+            "add": "Add resource"
+        },
         "control": {
             "required": "Required field",
-            "dateFinish": "The end date cannot be later than the project start date"
-        }  
+            "birthday-date": "Birth date cannot be later than today"
+        }
     },
-    
+
+    "project": {
+
+    },
+
     "association": {
         "title": "Associations",
         "table": {
@@ -68,19 +69,5 @@
         }
     },
 
-    "common": {
-        "enter-data": "Enter data",
-        "loading": "Loading",
-        
-        "button": {
-            "add": "Add",
-            "submit": "Submit",
-            "close": "Close",
-            "delete": "Delete"
-        },
-        
-        "control": {
-            "required": "Required field"
-        }
-    }
+    "loading": "Loading"
 }

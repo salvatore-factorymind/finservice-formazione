@@ -10,15 +10,33 @@
 
     "resource": {
         "title": "Resources",
-        "surname": "Surname",
-        "name": "Name",
-        "role": "Role",
-        "birthday-date": "Date of birth",
+        "table": {
+            "id": "Id",
+            "surname": "Surname",
+            "name": "Name",
+            "role": "Role",
+            "birthday-date": "Birth Date",
+            "delete": "Delete"
+        },
+        "modal": {
+            "title": "Enter data",
+            "id": "Id",
+            "surname": "Surname",
+            "name": "Name",
+            "role": "Role",
+            "birthday-date": "Birth Date",
+            "submit": "Submit",
+            "close": "Close"
+        },
+        "button": {
+            "add": "Add resource"
+        },
         "control": {
-            "birthday-date": "The birth date cannot be later than today"
+            "required": "Required field",
+            "birthday-date": "Birth date cannot be later than today"
         }
     },
-    
+
     "project": {
         "button": {
             "add": "Add",
@@ -39,7 +57,7 @@
             "dateFinish": "The end date cannot be later than the project start date"
         }  
     },
-    
+
     "association": {
         "title": "Associations",
         "table": {
@@ -68,19 +86,5 @@
         }
     },
 
-    "common": {
-        "enter-data": "Enter data",
-        "loading": "Loading",
-        
-        "button": {
-            "add": "Add",
-            "submit": "Submit",
-            "close": "Close",
-            "delete": "Delete"
-        },
-        
-        "control": {
-            "required": "Required field"
-        }
-    }
+    "loading": "Loading"
 }
