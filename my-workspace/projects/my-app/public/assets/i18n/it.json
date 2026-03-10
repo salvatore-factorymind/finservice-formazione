@@ -15,6 +15,7 @@
         "userTotaleIs":"Le risorse totali sono:",
 
         "totalProject": "Numero progetti",
+        "projectTotalIs":"I progetti totali sono:",
 
         "totalHour": "Ore totali",
         "hourTotaleIs": "Le ore totali sono:"
@@ -40,8 +41,7 @@
         },
         "control": {
             "dateFinish": "La data di fine non può essere superiore alla data di inizio del progetto"
-        },
-        "dashboard":"Totale progetti"
+        }
     },
     
     "association": {
