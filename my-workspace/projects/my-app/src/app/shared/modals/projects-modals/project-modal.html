@@ -8,7 +8,7 @@
     <form [formGroup]="formGroup" (ngSubmit)="handleSubmitProject()">
       <div class="mb-3">
  
-        <label class="form-label">{{"project.table.id" | translate}}</label>
+        <label class="form-label">{{"common.id" | translate}}</label>
         <input type="text" class="form-control" formControlName="id">
  
         <label class="form-label">{{"project.table.name" | translate}}</label>
@@ -50,12 +50,12 @@
              
       </div>
       <button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary">
-        {{"project.table.submit" | translate}}
+        {{"common.button.submit" | translate}}
       </button>
     </form>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-outline-secondary" (click)="activeModal.close('Close click')">
-        {{"project.table.close" | translate}}
+        {{"common.button.close" | translate}}
     </button>
 </div>
