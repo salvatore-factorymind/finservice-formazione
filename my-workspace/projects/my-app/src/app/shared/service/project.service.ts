@@ -1,11 +1,13 @@
-import { Injectable, Signal, signal } from '@angular/core';
+import { inject, Injectable, Signal, signal } from '@angular/core';
 import { Project } from '../models/project-model';
+import { UnionService } from './union.service';
 
  
  
  
 @Injectable()
 export class ProjectService {
+private readonly unionsSvc = inject(UnionService);
  
 private readonly ProjectList = signal<Project[]>([
    {
@@ -54,6 +56,10 @@ private readonly ProjectList = signal<Project[]>([
 
  public deleteProject(projectIdToDelete: number): void {
     const indexToRemove = this.ProjectList().findIndex(project => project.id === projectIdToDelete);
+
+    // Funzione cancella user in union
+    console.log("INDICE PROGETTO DA CANCELLARE: ", projectIdToDelete)
+    this.unionsSvc.deleteUnionProject(projectIdToDelete);
 
     this.ProjectList.update(project => {
       project.splice(indexToRemove, 1);
