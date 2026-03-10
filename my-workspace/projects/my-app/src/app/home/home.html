@@ -4,7 +4,15 @@
   <nav class="navbar navbar-dark bg-dark px-3">
     <div class="container-fluid">
       <div class="row w-100" style="align-items: center;">
-          <div class="col-5">
+          <div class="col-3" style="padding-left: 0;">
+            <button type="button" class="btn btn-light" (click)="openMenu()">Menu</button>
+          </div>
+          <div class="col-6" style="text-align: center;">
+            <h1 style="color:white;">
+              {{ "nav.page-name" | translate }}
+            </h1>
+          </div>
+          <div class="col-3 text-end">
             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
               <input
                 type="radio"
@@ -18,11 +26,6 @@
               <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
               <label class="btn btn-outline-light" for="btnradio2" (click)="ChangeEnglish()">English</label>
             </div>
-          </div>
-          <div class="col-7">
-            <h1 style="color:white;">
-              {{ "nav.page-name" | translate }}
-            </h1>
           </div>
       </div>
     </div>

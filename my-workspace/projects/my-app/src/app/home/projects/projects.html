@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <dx-data-grid [dataSource]="projectSvc.Project()" (onRowClick)="handleRowClicked($event)" [showBorders]="true">
                         <dxo-data-grid-filter-row [visible]="true"></dxo-data-grid-filter-row>
-                        <dxi-data-grid-column dataField="id" dataType="number" caption="{{'project.table.id' | translate}}"></dxi-data-grid-column>
+                        <dxi-data-grid-column dataField="id" dataType="number" caption="{{'project.table.id' | translate}}"  width="80"></dxi-data-grid-column>
                         <dxi-data-grid-column dataField="name" dataType="string" caption="{{'project.table.name' | translate}}"></dxi-data-grid-column>
                         <dxi-data-grid-column dataField="description" dataType="string" caption="{{'project.table.description' | translate}}"></dxi-data-grid-column>
                         <dxi-data-grid-column dataField="dateStart" dataType="date" format="dd/MM/yyyy" caption="{{'project.table.date-start' | translate}}"></dxi-data-grid-column>

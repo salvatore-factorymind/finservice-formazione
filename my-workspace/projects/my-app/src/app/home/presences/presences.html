@@ -8,7 +8,7 @@
                         <dxo-data-grid-filter-row [visible]="true"></dxo-data-grid-filter-row>
                         <dxo-data-grid-editing mode="popup"></dxo-data-grid-editing>
 
-                        <dxi-data-grid-column dataField="id" dataType="number" caption="{{'association.table.id' | translate}}"></dxi-data-grid-column>
+                        <dxi-data-grid-column dataField="id" dataType="number" caption="{{'association.table.id' | translate}}"  width="80"></dxi-data-grid-column>
                         <dxi-data-grid-column dataField="idUser" caption="{{'association.table.surname-name' | translate}}">
                             <dxo-lookup
                                 [dataSource]="usersSvc.User()"
@@ -31,20 +31,6 @@
                             </dxo-lookup>
                         </dxi-data-grid-column>
                         <dxi-data-grid-column dataField="hours" dataType="number" caption="{{'association.table.hour' | translate}}"></dxi-data-grid-column>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <dxi-column type="buttons" caption="{{'association.table.delete' | translate}}">
                             <dxi-button 
                                 hint="Elimina"

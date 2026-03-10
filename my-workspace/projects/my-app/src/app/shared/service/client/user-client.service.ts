@@ -12,7 +12,7 @@ import { User } from '../../models/user-model';
 export class UserClientService {
   private readonly http = inject(HttpClient)
   public getUsers(): Observable<User[]>{
-    return this.http.get<User[]>('.user.service.ts')
+    return this.http.get<User[]>('./assets/users.json')
     .pipe(delay(2000))
   }
 

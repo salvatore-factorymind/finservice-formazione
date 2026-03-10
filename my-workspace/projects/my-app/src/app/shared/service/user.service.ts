@@ -69,7 +69,7 @@ private readonly UserList = signal<User[]>([
   }
 
    public init():void{
-    this.isLoading.set(true);
+    /*this.isLoading.set(true);
 
     this.userClientSVC.getUsers()
     .pipe(
@@ -78,13 +78,11 @@ private readonly UserList = signal<User[]>([
     .subscribe({
       next: users => {
         this.UserList.set(users);
-        this.isLoading.set(false)
+        
       },
       error: err=> {
-        console.error(err);
-        this.isLoading.set(false)
       },
-    });
+    });*/
   }
 
     public deleteUser(UserIdToDelete: number): void {
