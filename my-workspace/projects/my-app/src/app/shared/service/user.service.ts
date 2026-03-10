@@ -4,10 +4,12 @@ import { User } from '../models/user-model';
 import { UserClientService } from './client/user-client.service';
 import { finalize } from 'rxjs';
 import { UnionService } from './union.service';
+import { FunctionsService } from './functions/functions.service';
  
 @Injectable()
 
 export class UserService {
+private readonly functionSvc = inject(FunctionsService)
 private readonly userClientSVC = inject(UserClientService);
 private readonly unionsSvc = inject(UnionService);
 private readonly isLoading = signal(false);
@@ -95,8 +97,11 @@ private readonly UserList = signal<User[]>([
       this.unionsSvc.deleteUnionUser(UserIdToDelete);
 
       this.UserList.update(user => {
+        return this.functionSvc.delete(UserIdToDelete, user)
+
+/*/
         user.splice(indexToRemove, 1);
-        return [...user];
+        return [...user];*/
       })
     }
  

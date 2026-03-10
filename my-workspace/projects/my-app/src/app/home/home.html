@@ -2,23 +2,19 @@
   <!--  NAVBAR -->
   <nav class="navbar navbar-dark bg-dark px-3">
     <div class="navbar-brand">
+      <div class="navbar-brand">
       <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-        <input
-          type="radio"
-          class="btn-check"
-          name="btnradio"
-          id="btnradio1"
-          autocomplete="off"
-          checked
-        />
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
         <label class="btn btn-outline-light" for="btnradio1" (click)="ChangeItaliano()">Italiano</label>
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
+        
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
         <label class="btn btn-outline-light" for="btnradio2" (click)="ChangeEnglish()">English</label>
       </div>
 
-      <a class="ms-4">
+      <a style="margin-left: 20px;">
         {{ "nav.page-name" | translate }}
       </a>
+    </div>
     </div>
   </nav>
 

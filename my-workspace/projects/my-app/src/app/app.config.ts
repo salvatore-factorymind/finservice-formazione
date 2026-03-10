@@ -7,6 +7,7 @@ import { routes } from './app.routes';
 import { ProjectService } from './shared/service/project.service';
 import { UnionService } from './shared/service/union.service';
 import { UserService } from './shared/service/user.service';
+import { FunctionsService } from './shared/service/functions/functions.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,6 +16,7 @@ export const appConfig: ApplicationConfig = {
     ProjectService,
     UnionService,
     UserService,
+    FunctionsService,
     provideTranslateService({
       loader: provideTranslateHttpLoader({
         prefix: '/assets/i18n/',

@@ -10,29 +10,11 @@
 
     "resource": {
         "title": "Risorse",
-        "table":{
-            "id": "Id",
-            "surname":"Cognome",
-            "name": "Nome",
-            "role":"Mansione",
-            "birthday-date": "Data di nascita",
-            "delete": "Elimina"
-        },
-        "modal": {
-            "title": "Inserisci i dati",
-            "id": "Id",
-            "surname": "Cognome",
-            "name": "Nome",
-            "role": "Mansione",
-            "birthday-date": "Data di nascita",
-            "submit": "Invia",
-            "close": "Chiudi"
-        },
-        "button":{
-            "add": "Aggiungi risorsa"
-        },
+        "surname":"Cognome",
+        "name": "Nome",
+        "role":"Mansione",
+        "birthday-date": "Data di nascita",
         "control":{
-            "required":"Campo obbligatorio",
             "birthday-date": "La data di nascita non può essere successiva a oggi"
         }
     },
@@ -69,5 +51,22 @@
         }
     },
 
-    "loading" : "Caricamento"
+    "common":{
+        "enter-data":"Inserire i dati",
+        "loading" : "Caricamento",
+        
+        "button":{
+            "add": "Aggiungi",
+            "submit": "Invia",
+            "close": "Chiudi",
+            "delete": "Elimina"
+        },
+        
+        "control":{
+            "required":"Campo obbligatorio"
+        }
+    }
+
+
+
 }
