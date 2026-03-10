@@ -1,15 +1,17 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { UnionService } from '../../shared/service/union.service';
+import { UserService } from '../../shared/service/user.service';
 
 @Component({
   selector: 'app-dashboard',
   imports: [TranslatePipe],
   templateUrl: './dashboard.html',
-  styleUrls: ['./dashboard.css']
+  styleUrls: ['./dashboard.css'],
 })
 export class Dashboard {
   protected readonly unionsSvc = inject(UnionService);
+  protected readonly UserSvc = inject(UserService);
   
   protected totalHour(): number{
     let sumHour = 0;

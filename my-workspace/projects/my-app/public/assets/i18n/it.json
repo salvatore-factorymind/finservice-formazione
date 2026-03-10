@@ -1,7 +1,8 @@
 {
     "nav": {
-        "page-name": "RENDICONTAZIONE PROGETTI",
+        "page-name": "Rendicontazione Progetti",
         "menu": "Menu",
+        "dashboard": "Dashboard",
         "resource":"Risorse",
         "project": "Progetti",
         "association": "Associazioni",
@@ -10,9 +11,13 @@
     
     "dashboard": {
         "title": "Dashboard",
-        "totalUser": "Numero risorse",
+        "totalUser": "Risorse totali",
+        "userTotaleIs":"Le risorse totali sono:",
+
         "totalProject": "Numero progetti",
-        "totalHour": "Ore totali"
+
+        "totalHour": "Ore totali",
+        "hourTotaleIs": "Le ore totali sono:"
     },
 
     "resource": {
