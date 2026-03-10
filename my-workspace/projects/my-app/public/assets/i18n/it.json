@@ -10,51 +10,23 @@
 
     "resource": {
         "title": "Risorse",
-        "table":{
-            "id": "Id",
-            "surname":"Cognome",
-            "name": "Nome",
-            "role":"Mansione",
-            "birthday-date": "Data di nascita",
-            "delete": "Elimina"
-        },
-        "modal": {
-            "title": "Inserisci i dati",
-            "id": "Id",
-            "surname": "Cognome",
-            "name": "Nome",
-            "role": "Mansione",
-            "birthday-date": "Data di nascita",
-            "submit": "Invia",
-            "close": "Chiudi"
-        },
-        "button":{
-            "add": "Aggiungi risorsa"
-        },
+        "surname":"Cognome",
+        "name": "Nome",
+        "role":"Mansione",
+        "birthday-date": "Data di nascita",
         "control":{
-            "required":"Campo obbligatorio",
             "birthday-date": "La data di nascita non può essere successiva a oggi"
         }
     },
     
     "project": {
-        "button": {
-            "add": "Aggiungi",
-            "delete": "Elimina"
-        },
-        "title": "Progetti",
         "table": {
-            "id": "Id",
             "name": "Nome progetto",
             "description": "Descrizione",
             "date-start": "Data d'inizio",
-            "date-finish": "Data di fine",
-            "delete": "Elimina",
-            "submit": "Invia",
-            "close": "Chiudi"
+            "date-finish": "Data di fine"
         },
         "control": {
-            "required": "Campo obbligatorio",
             "dateFinish": "La data di fine non può essere superiore alla data di inizio del progetto"
         }  
     },
@@ -82,10 +54,26 @@
             "add": "Aggiungi associazione"
         },
         "control":{
-            "required":"Campo obbligatorio",
             "hour": "Le ore devono essere maggiori di 0"
         }
     },
 
-    "loading" : "Caricamento"
+    "common":{
+        "enter-data":"Inserire i dati",
+        "loading" : "Caricamento",
+        
+        "button":{
+            "add": "Aggiungi",
+            "submit": "Invia",
+            "close": "Chiudi",
+            "delete": "Elimina"
+        },
+        
+        "control":{
+            "required":"Campo obbligatorio"
+        }
+    }
+
+
+
 }

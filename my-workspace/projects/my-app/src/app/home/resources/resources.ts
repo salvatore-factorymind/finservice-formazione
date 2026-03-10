@@ -16,7 +16,7 @@ import { FunctionsService } from '../../shared/service/functions/functions.servi
   imports: [DxDataGridModule, TranslatePipe, LoadingIndicator]
 })
 export class Resources implements OnInit {
-  protected readonly FunctionsSvc = inject(FunctionsService);
+  protected readonly FunctionsSvc = inject(FunctionsService)
   protected readonly UserSvc = inject(UserService);
   private readonly modalSvc = inject(NgbModal);
 
@@ -36,10 +36,10 @@ export class Resources implements OnInit {
   }
 
   protected onDeleteClick = (e: any) => {
+   
     e.event.stopPropagation();
 
     const id = e.row.data.id;
     this.UserSvc.deleteUser(id);
-    this.FunctionsSvc.delete(id, this.UserSvc.User());
   };
 }
