@@ -1,6 +1,6 @@
 @let isLoading = UserSvc.loading();
 <div class="container">
-  <h3><b>{{'resource.title' | translate}}</b></h3><br>
+  <h3><b>{{'common.title.resource' | translate}}</b></h3><br>
   <div class="row">
     <div class="col-md-12">
       <div class="card">
@@ -17,7 +17,7 @@
 
             
 
-            <dxi-data-grid-column dataField="id" dataType="number" caption="Id" width="80"></dxi-data-grid-column>
+            <dxi-data-grid-column dataField="id" dataType="number" caption="{{'common.id' | translate}}" width="80"></dxi-data-grid-column>
             <dxi-data-grid-column dataField="surname" dataType="string" caption="{{'resource.surname' | translate}}"></dxi-data-grid-column>
             <dxi-data-grid-column dataField="name" dataType="string" caption="{{'resource.name' | translate}}"></dxi-data-grid-column>
             <dxi-data-grid-column dataField="role" dataType="string"caption="{{'resource.role' | translate}}"></dxi-data-grid-column>
@@ -38,6 +38,6 @@
   </div>
   <br>
   <button type="button" class="btn btn-dark" (click)="handleNewUser()">
-    {{'common.button.add' | translate}} {{'resource.title' | translate}}
+    {{'common.button.add' | translate}} {{'common.title.resource' | translate}}
   </button>
 </div>

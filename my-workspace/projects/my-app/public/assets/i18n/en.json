@@ -2,70 +2,54 @@
     "nav": {
         "page-name": "Project Reporting",
         "menu": "Menu",
-        "resource": "Resources",
-        "project": "Projects",
-        "association": "Associations",
         "footer": "© 2026 Project Management System - All rights reserved"
+    },
+    
+    "dashboard": {
+        "totalUser": "Total Resources",
+        "userTotaleIs": "Total resources are:",
+
+        "totalProject": "Number of Projects",
+        "projectTotalIs": "Total projects are:",
+
+        "totalHour": "Total Hours",
+        "hourTotaleIs": "Total hours are:"
     },
 
     "resource": {
-        "title": "Resources",
         "surname": "Surname",
         "name": "Name",
         "role": "Role",
-        "birthday-date": "Date of birth",
+        "birthday-date": "Date of Birth",
         "control": {
             "birthday-date": "The birth date cannot be later than today"
         }
     },
     
     "project": {
-        "button": {
-            "add": "Add",
-            "delete": "Delete"
-        },
-        "title": "Project",
         "table": {
-            "id": "Id",
-            "name": "Project name",
+            "name": "Project Name",
             "description": "Description",
-            "date-start": "Start date",
-            "date-finish": "End date",
-            "delete": "Delete",
-            "submit": "Submit",
-            "close": "Close"
+            "date-start": "Start Date",
+            "date-finish": "End Date"
         },
         "control": {
-            "required": "Required field",
-            "dateFinish": "The end date cannot be later than the project start date"
-        },
-        "dashboard":"Total project"
+            "dateFinish": "The end date cannot be earlier than the project start date"
+        }
     },
     
     "association": {
-        "title": "Associations",
         "table": {
-            "id": "Id",
             "surname-name": "Surname Name",
             "project": "Project",
             "project-duration": "Project Duration",
-            "hour": "Hours",
-            "delete": "Delete"
+            "hour": "Hours"
         },
         "modal": {
-            "title": "Enter data",
-            "id": "Id",
             "user": "User",
-            "project": "Project",
-            "hour": "Hours",
-            "submit": "Submit",
-            "close": "Close"
-        },
-        "button": {
-            "add": "Add association"
+            "hour": "Hours"
         },
         "control": {
-            "required": "Required field",
             "hour": "Hours must be greater than 0"
         }
     },
@@ -73,7 +57,7 @@
     "common": {
         "enter-data": "Enter data",
         "loading": "Loading",
-        
+        "id": "Id",
         "button": {
             "add": "Add",
             "submit": "Submit",
@@ -83,6 +67,12 @@
         
         "control": {
             "required": "Required field"
+        },
+        "title": {
+            "dashboard": "Dashboard",
+            "resource": "Resources",
+            "project": "Projects",
+            "association": "Associations"
         }
     }
 }

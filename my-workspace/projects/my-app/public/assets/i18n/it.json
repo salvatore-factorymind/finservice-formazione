@@ -2,15 +2,10 @@
     "nav": {
         "page-name": "Rendicontazione Progetti",
         "menu": "Menu",
-        "dashboard": "Dashboard",
-        "resource":"Risorse",
-        "project": "Progetti",
-        "association": "Associazioni",
         "footer": "© 2026 Gestionale Progetti - Tutti i diritti riservati"
     },
     
     "dashboard": {
-        "title": "Dashboard",
         "totalUser": "Risorse totali",
         "userTotaleIs":"Le risorse totali sono:",
 
@@ -22,7 +17,6 @@
     },
 
     "resource": {
-        "title": "Risorse",
         "surname":"Cognome",
         "name": "Nome",
         "role":"Mansione",
@@ -33,7 +27,6 @@
     },
     
     "project": {
-        "title": "Progetti",
         "table": {
             "name": "Nome progetto",
             "description": "Descrizione",
@@ -46,26 +39,15 @@
     },
     
     "association": {
-        "title": "Associazioni",
         "table": {
-            "id": "Id",
             "surname-name": "Cognome Nome",
             "project": "Progetto",
             "project-duration": "Durata Progetto",
-            "hour": "Ore",
-            "delete": "Elimina"
+            "hour": "Ore"
         },
         "modal": {
-            "title": "Inserisci i dati",
-            "id": "Id",
             "user": "Utente",
-            "project": "Progetto",
-            "hour": "Ore",
-            "submit": "Invia",
-            "close": "Chiudi"
-        },
-        "button": {
-            "add": "Aggiungi associazione"
+            "hour": "Ore"
         },
         "control":{
             "hour": "Le ore devono essere maggiori di 0"
@@ -75,7 +57,7 @@
     "common":{
         "enter-data":"Inserire i dati",
         "loading" : "Caricamento",
-        
+        "id": "Id",
         "button":{
             "add": "Aggiungi",
             "submit": "Invia",
@@ -85,6 +67,12 @@
         
         "control":{
             "required":"Campo obbligatorio"
+        },
+        "title":{
+            "dashboard": "Dashboard",
+            "resource":"Risorse",
+            "project": "Progetti",
+            "association": "Associazioni"
         }
     }
 

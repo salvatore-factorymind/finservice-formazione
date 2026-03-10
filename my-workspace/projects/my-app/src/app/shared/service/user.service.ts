@@ -95,11 +95,8 @@ private readonly UserList = signal<User[]>([
       this.unionsSvc.deleteUnionUser(UserIdToDelete);
 
       this.UserList.update(user => {
-        return this.functionSvc.delete(UserIdToDelete, user)
+        return this.functionSvc.delete(indexToRemove, user)
 
-/*/
-        user.splice(indexToRemove, 1);
-        return [...user];*/
       })
     }
  
