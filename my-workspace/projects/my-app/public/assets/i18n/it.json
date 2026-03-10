@@ -1,11 +1,23 @@
 {
     "nav": {
-        "page-name": "RENDICONTAZIONE PROGETTI",
+        "page-name": "Rendicontazione Progetti",
         "menu": "Menu",
+        "dashboard": "Dashboard",
         "resource":"Risorse",
         "project": "Progetti",
         "association": "Associazioni",
         "footer": "© 2026 Gestionale Progetti - Tutti i diritti riservati"
+    },
+    
+    "dashboard": {
+        "title": "Dashboard",
+        "totalUser": "Risorse totali",
+        "userTotaleIs":"Le risorse totali sono:",
+
+        "totalProject": "Numero progetti",
+
+        "totalHour": "Ore totali",
+        "hourTotaleIs": "Le ore totali sono:"
     },
 
     "resource": {
