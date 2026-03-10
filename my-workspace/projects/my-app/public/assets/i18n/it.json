@@ -1,6 +1,6 @@
 {
     "nav": {
-        "page-name": "RENDICONTAZIONE PROGETTI",
+        "page-name": "Rendicontazione Progetti",
         "menu": "Menu",
         "resource":"Risorse",
         "project": "Progetti",
@@ -72,6 +72,11 @@
         "control":{
             "required":"Campo obbligatorio"
         }
+    },
+
+    "dashboard":{
+        "UserTotal": "Risorse totali",
+        "UserTotaleIs":"Le risorse totali sono"
     }
 
 
