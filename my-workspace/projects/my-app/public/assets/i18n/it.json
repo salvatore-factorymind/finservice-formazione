@@ -7,6 +7,13 @@
         "association": "Associazioni",
         "footer": "© 2026 Gestionale Progetti - Tutti i diritti riservati"
     },
+    
+    "dashboard": {
+        "title": "Dashboard",
+        "totalUser": "Numero risorse",
+        "totalProject": "Numero progetti",
+        "totalHour": "Ore totali"
+    },
 
     "resource": {
         "title": "Risorse",

@@ -1,3 +1,39 @@
 <div class="container">
-  <h3><b>Dashboard</b></h3><br>
+
+  <h3><b>{{ "dashboard.title" | translate}}</b></h3>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mt-3">
+        <div class="card-body">
+          <h5 class="card-title text-center">
+            
+          </h5>
+          <hr>
+          <p style="text-align: center; font-size: 30px;"></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mt-3">
+        <div class="card-body">
+          <h5 class="card-title text-center">
+            
+          </h5>
+          <hr>
+          <p style="text-align: center; font-size: 30px;"></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mt-3">
+        <div class="card-body">
+          <h3 class="card-title text-center">
+            {{ 'dashboard.totalHour' | translate }}
+          </h3>
+          <hr>
+          <p style="text-align: center; font-size: 30px;">{{ totalHour() }} Ore</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
