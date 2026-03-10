@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
@@ -11,13 +11,19 @@ import { Footer } from '../shared/components/footer/footer';
   imports: [RouterOutlet, RouterLink, TranslatePipe, Footer]
 })
 export class Home {
-  protected readonly traslateSVC = inject(TranslateService)
+  protected readonly traslateSVC = inject(TranslateService);
+
+  protected isShown = signal(false);
 
   protected ChangeEnglish(): void {
-    this.traslateSVC.use('en')
+    this.traslateSVC.use('en');
   }
 
   protected ChangeItaliano(): void {
-    this.traslateSVC.use('it')
+    this.traslateSVC.use('it');
+  }
+
+  protected openMenu(){
+    this.isShown.update((isShown) => !isShown);
   }
 }

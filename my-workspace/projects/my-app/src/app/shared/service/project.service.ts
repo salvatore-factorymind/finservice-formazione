@@ -1,5 +1,6 @@
-import { Injectable, Signal, signal } from '@angular/core';
+import { inject, Injectable, Signal, signal } from '@angular/core';
 import { Project } from '../models/project-model';
+import { FunctionsService } from './functions/functions.service';
 
  
  
@@ -7,6 +8,7 @@ import { Project } from '../models/project-model';
 @Injectable()
 export class ProjectService {
  
+  private readonly functionSvc = inject(FunctionsService);
 private readonly ProjectList = signal<Project[]>([
    {
     id: 1,
@@ -55,9 +57,15 @@ private readonly ProjectList = signal<Project[]>([
  public deleteProject(projectIdToDelete: number): void {
     const indexToRemove = this.ProjectList().findIndex(project => project.id === projectIdToDelete);
 
+    //this.unionsSvc.deleteUnionUser(UserIdToDelete);
+
+
+
     this.ProjectList.update(project => {
-      project.splice(indexToRemove, 1);
-      return [...project];
+
+      /*project.splice(indexToRemove, 1);
+      return [...project];*/
+      return this.functionSvc.delete(indexToRemove, project);
     })
   }
 }

@@ -1,5 +1,5 @@
-<h3><b>{{'association.title' | translate}}</b></h3>
 <div class="col-md-12">
+    <h3><b>{{'association.title' | translate}}</b></h3>
     <div class="card">
         <dx-data-grid [dataSource]="unionsSvc.Union()" (onRowClick)="handleRowClicked($event)" [showBorders]="true">
             <dxo-data-grid-filter-row [visible]="true"></dxo-data-grid-filter-row>
@@ -28,19 +28,6 @@
                 </dxo-lookup>
             </dxi-data-grid-column>
             <dxi-data-grid-column dataField="hours" dataType="number" caption="{{'association.table.hour' | translate}}"></dxi-data-grid-column>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             <dxi-column type="buttons" caption="{{'association.table.delete' | translate}}">
                 <dxi-button 
