@@ -2,10 +2,23 @@
     "nav": {
         "page-name": "Rendicontazione Progetti",
         "menu": "Menu",
+        "dashboard": "Dashboard",
         "resource":"Risorse",
         "project": "Progetti",
         "association": "Associazioni",
         "footer": "© 2026 Gestionale Progetti - Tutti i diritti riservati"
+    },
+    
+    "dashboard": {
+        "title": "Dashboard",
+        "totalUser": "Risorse totali",
+        "userTotaleIs":"Le risorse totali sono:",
+
+        "totalProject": "Numero progetti",
+        "projectTotalIs":"I progetti totali sono:",
+
+        "totalHour": "Ore totali",
+        "hourTotaleIs": "Le ore totali sono:"
     },
 
     "resource": {
@@ -29,7 +42,7 @@
         },
         "control": {
             "dateFinish": "La data di fine non può essere superiore alla data di inizio del progetto"
-        }  
+        }
     },
     
     "association": {
@@ -73,11 +86,6 @@
         "control":{
             "required":"Campo obbligatorio"
         }
-    },
-
-    "dashboard":{
-        "UserTotal": "Risorse totali",
-        "UserTotaleIs":"Le risorse totali sono"
     }
 
 

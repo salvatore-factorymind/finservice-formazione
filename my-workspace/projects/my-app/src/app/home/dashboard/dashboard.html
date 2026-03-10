@@ -1,17 +1,32 @@
 <div class="container">
-  <h3><b>Dashboard</b></h3><br>
+  <h3><b>{{ "dashboard.title" | translate}}</b></h3>
   <div class="row">
     <div class="col-md-4">
-      
       <div class="card mt-3">
         <div class="card-body">
           <h5 class="card-title text-center">
-            {{"dashboard.UserTotal" | translate}}
+            {{"dashboard.totalUser" | translate}}
           </h5>
           <hr>
-          <p>{{"dashboard.UserTotaleIs" | translate}}: {{UserSvc.User().length}}</p>
+          <p style="text-align: center;">{{"dashboard.userTotaleIs" | translate}} {{UserSvc.User().length}}</p>
         </div>
       </div>
     </div>
-  </div>
+    <div class="col-md-4">
+        <div class="card mt-3">
+          <div class="card-body">
+            <h5 class="card-title text-center">{{"dashboard.totalProject" | translate}}</h5>
+            <hr>
+            <p>{{ "dashboard.projectTotalIs" | translate }} {{ projectSvc.projectCount() }}</p>
+          </div>
+        </div>
+      </div>
+    <div class="col-md-4">
+      <div class="card mt-3">
+        <div class="card-body">
+          <h5 class="card-title text-center">
+            {{ "dashboard.totalHour" | translate }}
+          </h5>
+          <hr>
+          <p style="text-align: center;">{{ "dashboard.hourTotaleIs" | translate }} {{ totalHour() }}</p>
 </div>

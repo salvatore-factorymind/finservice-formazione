@@ -1,4 +1,4 @@
-import { inject, Injectable, Signal, signal } from '@angular/core';
+import { computed, inject, Injectable, Signal, signal } from '@angular/core';
 import { Project } from '../models/project-model';
 import { UnionService } from './union.service';
 import { FunctionsService } from './functions/functions.service';
@@ -8,10 +8,10 @@ import { FunctionsService } from './functions/functions.service';
  
 @Injectable()
 export class ProjectService {
-private readonly unionsSvc = inject(UnionService);
- 
+  private readonly unionsSvc = inject(UnionService);
+  
   private readonly functionSvc = inject(FunctionsService);
-private readonly ProjectList = signal<Project[]>([
+  private readonly ProjectList = signal<Project[]>([
    {
     id: 1,
     name: "E-commerce Platform",
@@ -70,4 +70,9 @@ private readonly ProjectList = signal<Project[]>([
       return this.functionSvc.delete(indexToRemove, project);
     })
   }
+
+  public readonly projectCount = computed(() => {
+    const projectL = this.ProjectList();
+    return projectL.length;
+  })
 }
