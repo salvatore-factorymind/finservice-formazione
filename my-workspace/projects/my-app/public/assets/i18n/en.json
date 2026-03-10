@@ -38,7 +38,8 @@
         "control": {
             "required": "Required field",
             "dateFinish": "The end date cannot be later than the project start date"
-        }  
+        },
+        "dashboard":"Total project"
     },
     
     "association": {
