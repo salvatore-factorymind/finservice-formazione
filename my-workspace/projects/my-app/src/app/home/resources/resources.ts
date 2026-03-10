@@ -8,12 +8,13 @@ import { User } from '../../shared/models/user-model';
 import { UserModalComponent } from '../../shared/modals/user-modals/user-modal';
 import { UserService } from '../../shared/service/user.service';
 import { FunctionsService } from '../../shared/service/functions/functions.service';
+import { LowerCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-resources',
   templateUrl: './resources.html',
   styleUrl: './resources.css',
-  imports: [DxDataGridModule, TranslatePipe, LoadingIndicator]
+  imports: [DxDataGridModule, TranslatePipe, LoadingIndicator, LowerCasePipe]
 })
 export class Resources implements OnInit {
   protected readonly FunctionsSvc = inject(FunctionsService)

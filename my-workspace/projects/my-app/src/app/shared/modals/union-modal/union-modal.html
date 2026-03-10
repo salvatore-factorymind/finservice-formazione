@@ -1,5 +1,5 @@
 <div class="modal-header">
-	<h4 class="modal-title">{{'association.modal.title' | translate}}</h4>
+	<h4 class="modal-title">{{'common.enter-data' | translate}}</h4>
 	<button 
 		type="button" 
 		class="btn-close" 
@@ -13,7 +13,7 @@
 <form [formGroup]="formGroup" (ngSubmit)="handleSubmit()">
   <!--Id-->
   <div class="mb-3">
-    <label class="form-label">{{'association.modal.id' | translate}}</label>
+    <label class="form-label">{{'common.id' | translate}}</label>
     <dx-number-box
       formControlName="id"
       [min]="0"
@@ -30,20 +30,20 @@
         </option>
       </select>
     @if (formGroup.controls.idUser.errors?.['required']) {
-      <div class="text-danger">{{'association.control.required' | translate}}</div>
+      <div class="text-danger">{{'common.control.required' | translate}}</div>
     }
   </div>
 
   <!--Progetto-->
   <div class="mb-3">
-    <label class="form-label">{{'association.modal.project' | translate}}</label>
+    <label class="form-label">{{'association.table.project' | translate}}</label>
       <select class="form-select" formControlName="idProject">
         <option *ngFor="let project of projects()" [ngValue]="project.id">
           {{ project.name }}
         </option>
       </select>
       @if (formGroup.controls.idProject.errors?.['required']){
-      <div class="text-danger">{{'association.control.required' | translate}}</div>
+      <div class="text-danger">{{'common.control.required' | translate}}</div>
     }
   </div>
 
@@ -57,7 +57,7 @@
         [inputAttr]="{ 'aria-label': 'Title' }"
       ></dx-number-box>
       @if (formGroup.controls.hours.errors?.['required']){
-        <div class="text-danger">{{'association.control.required' | translate}}</div>
+        <div class="text-danger">{{'common.control.required' | translate}}</div>
       } @else {
         @if (formGroup.controls.hours.errors?.['hours']){
           <div class="text-danger">{{'association.control.hour' | translate}}</div>
@@ -65,12 +65,12 @@
       }
   </div>
   
-  <button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary">{{'association.modal.submit' | translate}}</button>
+  <button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary">{{'common.button.submit' | translate}}</button>
 </form>
 </div>
 
 <div class="modal-footer">
 	<button type="button" class="btn btn-outline-secondary" (click)="activeModal.close('Close click')">
-	  {{'association.modal.close' | translate}}
+	  {{'common.button.close' | translate}}
 	</button>
 </div>

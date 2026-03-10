@@ -12,12 +12,13 @@ import { User } from '../../shared/models/user-model';
 import { Project } from '../../shared/models/project-model';
 import { UnionModal } from '../../shared/modals/union-modal/union-modal';
 import { TranslatePipe } from '@ngx-translate/core';
+import { LowerCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-presences',
   templateUrl: './presences.html',
   styleUrl: './presences.css',
-  imports: [DxDataGridModule, DxLookupModule, DxButtonModule, TranslatePipe]
+  imports: [DxDataGridModule, DxLookupModule, DxButtonModule, TranslatePipe, LowerCasePipe]
 })
 export class Presences {
   protected readonly unionsSvc = inject(UnionService);

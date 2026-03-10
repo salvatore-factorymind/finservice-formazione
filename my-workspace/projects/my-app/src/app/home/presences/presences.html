@@ -1,5 +1,5 @@
 <div class="container">
-    <h3><b>{{'association.title' | translate}}</b></h3><br>
+    <h3><b>{{'common.title.association' | translate}}</b></h3><br>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -8,7 +8,7 @@
                         <dxo-data-grid-filter-row [visible]="true"></dxo-data-grid-filter-row>
                         <dxo-data-grid-editing mode="popup"></dxo-data-grid-editing>
 
-                        <dxi-data-grid-column dataField="id" dataType="number" caption="{{'association.table.id' | translate}}"  width="80"></dxi-data-grid-column>
+                        <dxi-data-grid-column dataField="id" dataType="number" caption="{{'common.id' | translate}}"  width="80"></dxi-data-grid-column>
                         <dxi-data-grid-column dataField="idUser" caption="{{'association.table.surname-name' | translate}}">
                             <dxo-lookup
                                 [dataSource]="usersSvc.User()"
@@ -31,7 +31,7 @@
                             </dxo-lookup>
                         </dxi-data-grid-column>
                         <dxi-data-grid-column dataField="hours" dataType="number" caption="{{'association.table.hour' | translate}}"></dxi-data-grid-column>
-                        <dxi-column type="buttons" caption="{{'association.table.delete' | translate}}">
+                        <dxi-column type="buttons" caption="{{'common.button.delete' | translate}}">
                             <dxi-button 
                                 hint="Elimina"
                                 icon="trash"
@@ -44,7 +44,7 @@
         </div><br>
     </div>
     <br>
-    <button type="button" class="btn btn-dark" (click)="handleNewUnion()">{{'association.button.add' | translate}}</button><br><br>
+    <button type="button" class="btn btn-dark" (click)="handleNewUnion()">{{'common.button.add' | translate}} {{'common.title.association' | translate | lowercase}}</button><br><br>
     <!--
     <button type="button" class="btn btn-success" (click)="unionsSvc.deleteUnionUser(1)">Elimina utente</button><br><br>
     <button type="button" class="btn btn-success" (click)="unionsSvc.deleteUnionProject(1)">Elimina progetto</button><br><br>
