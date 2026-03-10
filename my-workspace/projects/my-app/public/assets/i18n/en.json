@@ -1,6 +1,6 @@
 {
     "nav": {
-        "page-name": "Project Reporting",
+        "page-name": "PROJECT REPORTING",
         "menu": "Menu",
         "resource": "Resources",
         "project": "Projects",
@@ -24,6 +24,7 @@
             "add": "Add",
             "delete": "Delete"
         },
+        "title": "Project",
         "table": {
             "id": "Id",
             "name": "Project name",

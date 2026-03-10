@@ -1,38 +1,36 @@
-<h3><b>{{'association.title' | translate}}</b></h3>
-<div class="col-md-12">
-    <div class="card">
-        <dx-data-grid [dataSource]="unionsSvc.Union()" (onRowClick)="handleRowClicked($event)" [showBorders]="true">
-            <dxo-data-grid-filter-row [visible]="true"></dxo-data-grid-filter-row>
-            <dxo-data-grid-editing mode="popup"></dxo-data-grid-editing>
+<div class="container">
+    <h3><b>{{'association.title' | translate}}</b></h3><br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <dx-data-grid [dataSource]="unionsSvc.Union()" (onRowClick)="handleRowClicked($event)" [showBorders]="true">
+                        <dxo-data-grid-filter-row [visible]="true"></dxo-data-grid-filter-row>
+                        <dxo-data-grid-editing mode="popup"></dxo-data-grid-editing>
 
-            <dxi-data-grid-column dataField="id" dataType="number" caption="{{'association.table.id' | translate}}"></dxi-data-grid-column>
-            <dxi-data-grid-column dataField="idUser" caption="{{'association.table.surname-name' | translate}}">
-                <dxo-lookup
-                    [dataSource]="usersSvc.User()"
-                    valueExpr="id"
-                    [displayExpr]="getUserFullName">
-                </dxo-lookup>
-            </dxi-data-grid-column>
-            <dxi-data-grid-column dataField="idProject" caption="{{'association.table.project' | translate}}">
-                <dxo-lookup
-                    [dataSource]="projectsSvc.Project()"
-                    valueExpr="id"
-                    displayExpr="name">
-                </dxo-lookup>
-            </dxi-data-grid-column>
-            <dxi-data-grid-column dataField="idProject" caption="{{'association.table.project-duration' | translate}}">
-                <dxo-lookup
-                    [dataSource]="projectsSvc.Project()"
-                    valueExpr="id"
-                    [displayExpr]="getDuration">
-                </dxo-lookup>
-            </dxi-data-grid-column>
-            <dxi-data-grid-column dataField="hours" dataType="number" caption="{{'association.table.hour' | translate}}"></dxi-data-grid-column>
-
-
-
-
-
+                        <dxi-data-grid-column dataField="id" dataType="number" caption="{{'association.table.id' | translate}}"></dxi-data-grid-column>
+                        <dxi-data-grid-column dataField="idUser" caption="{{'association.table.surname-name' | translate}}">
+                            <dxo-lookup
+                                [dataSource]="usersSvc.User()"
+                                valueExpr="id"
+                                [displayExpr]="getUserFullName">
+                            </dxo-lookup>
+                        </dxi-data-grid-column>
+                        <dxi-data-grid-column dataField="idProject" caption="{{'association.table.project' | translate}}">
+                            <dxo-lookup
+                                [dataSource]="projectsSvc.Project()"
+                                valueExpr="id"
+                                displayExpr="name">
+                            </dxo-lookup>
+                        </dxi-data-grid-column>
+                        <dxi-data-grid-column dataField="idProject" caption="{{'association.table.project-duration' | translate}}">
+                            <dxo-lookup
+                                [dataSource]="projectsSvc.Project()"
+                                valueExpr="id"
+                                [displayExpr]="getDuration">
+                            </dxo-lookup>
+                        </dxi-data-grid-column>
+                        <dxi-data-grid-column dataField="hours" dataType="number" caption="{{'association.table.hour' | translate}}"></dxi-data-grid-column>
 
 
 
@@ -42,19 +40,27 @@
 
 
 
-            <dxi-column type="buttons" caption="{{'association.table.delete' | translate}}">
-                <dxi-button 
-                    hint="Elimina"
-                    icon="trash"
-                    [onClick]="onDeleteClick">
-                </dxi-button>
-            </dxi-column>
-        </dx-data-grid>
-        
+
+
+
+
+
+                        <dxi-column type="buttons" caption="{{'association.table.delete' | translate}}">
+                            <dxi-button 
+                                hint="Elimina"
+                                icon="trash"
+                                [onClick]="onDeleteClick">
+                            </dxi-button>
+                        </dxi-column>
+                    </dx-data-grid>
+                </div>
+            </div>
+        </div><br>
     </div>
-</div><br>
-<button type="button" class="btn btn-success" (click)="handleNewUnion()">{{'association.button.add' | translate}}</button><br><br>
-<!--
-<button type="button" class="btn btn-success" (click)="unionsSvc.deleteUnionUser(1)">Elimina utente</button><br><br>
-<button type="button" class="btn btn-success" (click)="unionsSvc.deleteUnionProject(1)">Elimina progetto</button><br><br>
--->
+    <br>
+    <button type="button" class="btn btn-dark" (click)="handleNewUnion()">{{'association.button.add' | translate}}</button><br><br>
+    <!--
+    <button type="button" class="btn btn-success" (click)="unionsSvc.deleteUnionUser(1)">Elimina utente</button><br><br>
+    <button type="button" class="btn btn-success" (click)="unionsSvc.deleteUnionProject(1)">Elimina progetto</button><br><br>
+    -->
+</div>
