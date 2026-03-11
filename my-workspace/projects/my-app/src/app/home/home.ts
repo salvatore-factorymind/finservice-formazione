@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 import { Footer } from '../shared/components/footer/footer';
@@ -8,7 +8,7 @@ import { Footer } from '../shared/components/footer/footer';
   selector: 'app-home',
   templateUrl: './home.html',
   styleUrl: './home.css',
-  imports: [RouterOutlet, RouterLink, TranslatePipe, Footer]
+  imports: [RouterOutlet, RouterLink, TranslatePipe, Footer, RouterLinkActive]
 })
 export class Home {
   protected readonly traslateSVC = inject(TranslateService);

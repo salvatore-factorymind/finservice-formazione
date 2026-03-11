@@ -3,6 +3,8 @@ import { DxDataGridModule, DxDataGridTypes } from 'devextreme-angular/ui/data-gr
 import { DxLookupModule } from 'devextreme-angular';
 import { DxButtonModule } from 'devextreme-angular';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TranslatePipe } from '@ngx-translate/core';
+import { LowerCasePipe } from '@angular/common';
 
 import { UnionService } from '../../shared/service/union.service';
 import { ProjectService } from '../../shared/service/project.service';
@@ -11,8 +13,7 @@ import { Union } from '../../shared/models/union-model';
 import { User } from '../../shared/models/user-model';
 import { Project } from '../../shared/models/project-model';
 import { UnionModal } from '../../shared/modals/union-modal/union-modal';
-import { TranslatePipe } from '@ngx-translate/core';
-import { LowerCasePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-presences',
