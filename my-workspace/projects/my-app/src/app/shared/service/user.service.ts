@@ -1,4 +1,4 @@
-import { inject, Injectable, Signal, signal } from '@angular/core';
+import { computed, inject, Injectable, Signal, signal } from '@angular/core';
  
 import { User } from '../models/user-model';
 import { UserClientService } from './client/user-client.service';
@@ -99,5 +99,11 @@ private readonly UserList = signal<User[]>([
 
       })
     }
+
+  public readonly UserCount = computed(() => {
+    const UserCnt = this.UserList();
+    return UserCnt.length;
+  })
+    
  
 }

@@ -36,33 +36,34 @@
 
   @if(isShown()){
     <!-- SIDEBAR -->
-    <aside class="bg-dark text-white p-3" style="width: 250px">
-      <h5 class="text-uppercase">{{ "nav.menu" | translate }}</h5>
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link text-white" routerLink="/home/dashboard">
-            {{ "common.title.dashboard" | translate }}
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" routerLink="/home/resources">
-            {{ "common.title.resource" | translate }}
-          </a>
-        </li>
+      <aside class="bg-dark text-white p-3" style="width: 250px">
+        <h5 class="text-uppercase">{{ "nav.menu" | translate }}</h5>
+        <ul class="nav flex-column" >
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="/home/dashboard">
+              {{ "common.title.dashboard" | translate }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="/home/resources">
+              {{ "common.title.resource" | translate }}
+            </a>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link text-white" routerLink="/home/projects">
-            {{ "common.title.project" | translate }}
-          </a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="/home/projects">
+              {{ "common.title.project" | translate }}
+            </a>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link text-white" routerLink="/home/presences">
-            {{ "common.title.association" | translate }}
-          </a>
-        </li>
-      </ul>
-    </aside>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="/home/presences">
+              {{ "common.title.association" | translate }}
+            </a>
+          </li>
+        </ul>
+      </aside>
+    
   }
 
     <!--  AREA CONTENUTO -->
