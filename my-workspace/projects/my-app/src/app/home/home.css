@@ -1,14 +1,37 @@
 .enter-animation {
-  animation: slide-fade 1s;
+  animation: slide-in 0.3s ease-out;
 }
 
-@keyframes slide-fade {
+@keyframes slide-in {
   from {
-    opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(-100%);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
+}
+
+.leave-animation {
+  animation: slide-out 0.3s ease-out;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.main-content {
+  transition: transform 0.3s ease;
+}
+
+.main-enter {
+  transform: translateX(250px);
+}
+
+.main-leave {
+  transform: translateX(0);
 }

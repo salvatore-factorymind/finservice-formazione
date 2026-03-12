@@ -17,7 +17,7 @@ import { LowerCasePipe } from '@angular/common';
 export class Projects {
   protected readonly projectSvc = inject(ProjectService);
   protected readonly functionsSvc = inject(FunctionsService);
- 
+  
   private readonly modalSvc = inject(NgbModal);
  
   protected handleNewProject(): void{

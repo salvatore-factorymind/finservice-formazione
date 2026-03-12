@@ -1,4 +1,4 @@
-import { Injectable, Signal, signal } from '@angular/core';
+import { computed, Injectable, Signal, signal } from '@angular/core';
 import { Union } from '../models/union-model';
  
 @Injectable()
@@ -94,4 +94,10 @@ export class UnionService {
       return [...unions];
     });
   }
+
+  public readonly totalHour = computed(() => {
+    const sum = this.unionList().reduce((tot, arr) => tot + arr.hours, 0);
+
+    return sum;
+  })
 }
