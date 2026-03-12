@@ -11,8 +11,7 @@
 
           <dx-data-grid [dataSource]="UserSvc.User()" (onRowClick)="handleRowClicked($event)" [showBorders]="true">
             <dxo-data-grid-filter-row [visible]="true"></dxo-data-grid-filter-row>
-            <dxo-data-grid-editing mode="popup" [allowAdding]="false" [allowUpdating]="true"
-              [allowDeleting]="true"></dxo-data-grid-editing>
+            <dxo-data-grid-editing mode="popup" [allowAdding]="false" [allowUpdating]="true" [allowDeleting]="true"></dxo-data-grid-editing>
 
 
             
@@ -21,14 +20,23 @@
             <dxi-data-grid-column dataField="surname" dataType="string" caption="{{'resource.surname' | translate}}"></dxi-data-grid-column>
             <dxi-data-grid-column dataField="name" dataType="string" caption="{{'resource.name' | translate}}"></dxi-data-grid-column>
             <dxi-data-grid-column dataField="role" dataType="string"caption="{{'resource.role' | translate}}"></dxi-data-grid-column>
+            <dxi-data-grid-column dataField="contract" dataType="string"caption="{{'resource.contract' | translate}}">
+              <!--<dxo-lookup
+              [dataSource]="contractTypes"
+              valueExpr="id"
+              displayExpr="name">
+            </dxo-lookup>-->
+            </dxi-data-grid-column>
             <dxi-data-grid-column dataField="dateBirth" dataType="date" format="dd/MM/yyyy" caption="{{'resource.birthday-date' | translate}}"></dxi-data-grid-column>
             
             <dxi-column type="buttons" caption="{{'common.button.delete' | translate}}">
+              
               <dxi-button 
                 hint="Elimina"
                 icon="trash"
                 [onClick]="onDeleteClick">
-              </dxi-button>
+              </dxi-button>              
+              
             </dxi-column>
           </dx-data-grid>
           }

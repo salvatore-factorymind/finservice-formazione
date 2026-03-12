@@ -4,4 +4,11 @@ export interface User {
   name: string;
   role: string;
   dateBirth: Date;
+  contract: ContractType;
+}
+
+export enum ContractType {
+  FixedTerm,
+  Permanent,
+  Intern
 }

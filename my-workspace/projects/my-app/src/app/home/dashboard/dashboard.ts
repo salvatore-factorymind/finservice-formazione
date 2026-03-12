@@ -3,10 +3,11 @@ import { ProjectService } from '../../shared/service/project.service';
 import { TranslatePipe } from '@ngx-translate/core';
 import { UnionService } from '../../shared/service/union.service';
 import { UserService } from '../../shared/service/user.service';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, RouterLink],
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.css'],
 })

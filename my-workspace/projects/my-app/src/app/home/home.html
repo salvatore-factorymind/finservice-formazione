@@ -34,9 +34,11 @@
   <!--  CONTENUTO CENTRALE -->
   <div class="d-flex flex-grow-1">
 
-  @if(isShown()){
     <!-- SIDEBAR -->
-    <aside class="bg-dark text-white p-3" style="width: 250px" animate.enter="enter-animation" animate.leave="leave-animation">
+    <aside
+      class="sidebar bg-dark text-white"
+      [class.sidebar-open]="isShown()"
+    >
       <h5 class="text-uppercase">{{ "nav.menu" | translate }}</h5>
       <ul class="nav flex-column">
         <li class="nav-item">
@@ -49,13 +51,11 @@
             {{ "common.title.resource" | translate }}
           </a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link text-white" routerLink="/home/projects">
             {{ "common.title.project" | translate }}
           </a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link text-white" routerLink="/home/presences">
             {{ "common.title.association" | translate }}
@@ -63,12 +63,12 @@
         </li>
       </ul>
     </aside>
-  }
 
-    <!--  AREA CONTENUTO -->
-    <main class="flex-grow-1 p-4 bg-light" [class.main-enter]="isShown()" [class.main-leave]="!isShown()">
+    <!-- MAIN -->
+    <main class="flex-grow-1 p-4 bg-light main-content">
       <router-outlet></router-outlet>
     </main>
+
   </div>
 
   <!--  FOOTER -->

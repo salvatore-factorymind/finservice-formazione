@@ -2,18 +2,18 @@
   <h3><b>{{ "common.title.dashboard" | translate}}</b></h3>
   <div class="row">
     <div class="col-md-4">
-      <div class="card mt-3">
+      <div class="card mt-3 clickable-card" routerLink="/home/resources">
         <div class="card-body">
           <h5 class="card-title text-center">
             {{"dashboard.totalUser" | translate}}
           </h5>
           <hr>
-          <p style="text-align: center;">{{"dashboard.userTotaleIs" | translate}} {{UserSvc.User().length}}</p>
+          <p style="text-align: center;">{{"dashboard.userTotaleIs" | translate}} {{UserSvc.UserCount()}}</p>
         </div>
       </div>
     </div>
     <div class="col-md-4">
-        <div class="card mt-3">
+        <div class="card mt-3 clickable-card" routerLink="/home/projects">
           <div class="card-body">
             <h5 class="card-title text-center">{{"dashboard.totalProject" | translate}}</h5>
             <hr>
@@ -22,11 +22,15 @@
         </div>
       </div>
     <div class="col-md-4">
-      <div class="card mt-3">
+      <div class="card mt-3 clickable-card" routerLink="/home/presences">
         <div class="card-body">
           <h5 class="card-title text-center">
             {{ "dashboard.totalHour" | translate }}
           </h5>
           <hr>
           <p style="text-align: center;">{{ "dashboard.hourTotaleIs" | translate }} {{ unionsSvc.totalHour() }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

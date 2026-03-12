@@ -37,6 +37,11 @@
           </div>
         }
         <label class="form-label">
+          {{"resource.contract" | translate}}
+        </label><br>
+        <app-form-user-contract formControlName="contract"></app-form-user-contract>
+        <br>
+        <label class="form-label">
           {{'resource.birthday-date' | translate}}
         </label>
         <input type="date" class="form-control" formControlName="dateBirth">

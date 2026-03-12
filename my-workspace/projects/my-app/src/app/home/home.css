@@ -1,37 +1,18 @@
-.enter-animation {
-  animation: slide-in 0.3s ease-out;
+.sidebar {
+  width: 0;
+  padding: 16px;
+  padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  white-space: nowrap;
 }
 
-@keyframes slide-in {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-.leave-animation {
-  animation: slide-out 0.3s ease-out;
-}
-
-@keyframes slide-out {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+.sidebar-open {
+  padding: 16px;
+  width: 250px;
 }
 
 .main-content {
-  transition: transform 0.3s ease;
-}
-
-.main-enter {
-  transform: translateX(250px);
-}
-
-.main-leave {
-  transform: translateX(0);
+  transition: all 0.3s ease;
 }
