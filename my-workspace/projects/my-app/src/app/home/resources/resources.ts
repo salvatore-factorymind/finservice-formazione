@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { DxDataGridModule, DxDataGridTypes } from 'devextreme-angular/ui/data-grid';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { LoadingIndicator } from 'my-lib';
 
 import { User } from '../../shared/models/user-model';
@@ -21,10 +21,13 @@ export class Resources implements OnInit {
   protected readonly UserSvc = inject(UserService);
   private readonly modalSvc = inject(NgbModal);
 
+
+  constructor(private translate: TranslateService) {}
+  
   public ngOnInit(): void {
     this.UserSvc.init();
   }
-
+  
   protected handleNewUser(): void {
     const modalRef = this.modalSvc.open(UserModalComponent);
     (modalRef.componentInstance as UserModalComponent).UserIdToEdit = 0;

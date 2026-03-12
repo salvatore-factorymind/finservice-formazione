@@ -21,8 +21,12 @@
         "name": "Nome",
         "role":"Mansione",
         "birthday-date": "Data di nascita",
+        "contract": "Tipologia contrattuale",
+        "FixedTerm": "Tempo determinato",
+        "Permanent": "Tempo indeterminato",
+        "Intern": "Stagista",
         "control":{
-            "birthday-date": "La data di nascita non può essere successiva a oggi"
+            "birthday-date": "Il dipendente deve essere maggiorenne"
         }
     },
     

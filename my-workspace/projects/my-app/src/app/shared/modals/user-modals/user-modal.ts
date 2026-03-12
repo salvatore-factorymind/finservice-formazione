@@ -4,15 +4,16 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap'
 
 import { UserService } from '../../service/user.service';
 import { ActivatedRoute } from '@angular/router';
-import { User } from '../../models/user-model';
+import { ContractType, User } from '../../models/user-model';
 import { TranslatePipe } from '@ngx-translate/core';
+import { FormUserContractComponent } from "../../components/form-user-contract/form-user-contract/form-user-contract.component";
 
 
 
 @Component({
   selector: 'app-user-modal',
   templateUrl: './user-modal.html',
-  imports: [ReactiveFormsModule, FormsModule, TranslatePipe]
+  imports: [ReactiveFormsModule, FormsModule, TranslatePipe, FormUserContractComponent]
 })
 
 export class UserModalComponent{
@@ -29,6 +30,7 @@ export class UserModalComponent{
         name: new FormControl<string | null>(null, Validators.required),
         role: new FormControl<string | null>(null, Validators.required),
         dateBirth: new FormControl<Date | null>(null, [Validators.required, validBirthdate()]),
+        contract: new FormControl<ContractType | null>({value: ContractType.Intern, disabled:false})
     })
 
     public ngOnInit(): void {
@@ -60,7 +62,15 @@ export function validBirthdate(): ValidatorFn{
 
       const now = new Date();
 
-      if (date >= now){
+      const adultDate = new Date(
+        now.getFullYear() - 18,
+        now.getMonth(),
+        now.getDate()
+      );
+
+      console.log(adultDate)
+
+      if (date >= adultDate){
         return { birthDate: true};
       }
       return null

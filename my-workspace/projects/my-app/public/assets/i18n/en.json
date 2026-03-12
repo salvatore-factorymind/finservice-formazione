@@ -6,32 +6,36 @@
     },
     
     "dashboard": {
-        "totalUser": "Total Resources",
-        "userTotaleIs": "Total resources are:",
+        "totalUser": "Total resources",
+        "userTotaleIs": "The total resources are:",
 
-        "totalProject": "Number of Projects",
-        "projectTotalIs": "Total projects are:",
+        "totalProject": "Number of projects",
+        "projectTotalIs": "The total projects are:",
 
-        "totalHour": "Total Hours",
-        "hourTotaleIs": "Total hours are:"
+        "totalHour": "Total hours",
+        "hourTotaleIs": "The total hours are:"
     },
 
     "resource": {
         "surname": "Surname",
         "name": "Name",
         "role": "Role",
-        "birthday-date": "Date of Birth",
+        "birthday-date": "Birth date",
+        "contract": "Contract type",
+        "FixedTerm": "Fixed-term",
+        "Permanent": "Permanent",
+        "Intern": "Intern",
         "control": {
-            "birthday-date": "The birth date cannot be later than today"
+            "birthday-date": "The employee must be an adult"
         }
     },
     
     "project": {
         "table": {
-            "name": "Project Name",
+            "name": "Project name",
             "description": "Description",
-            "date-start": "Start Date",
-            "date-finish": "End Date"
+            "date-start": "Start date",
+            "date-finish": "End date"
         },
         "control": {
             "dateFinish": "The end date cannot be earlier than the project start date"
@@ -42,7 +46,7 @@
         "table": {
             "surname-name": "Surname Name",
             "project": "Project",
-            "project-duration": "Project Duration",
+            "project-duration": "Project duration",
             "hour": "Hours"
         },
         "modal": {
