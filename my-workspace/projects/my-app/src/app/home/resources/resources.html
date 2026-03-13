@@ -1,5 +1,7 @@
+
 @let isLoading = UserSvc.loading();
 <div class="container">
+</div>
   <h3><b>{{'common.title.resource' | translate}}</b></h3><br>
   <div class="row">
     <div class="col-md-12">
@@ -11,7 +13,7 @@
 
           <dx-data-grid [dataSource]="UserSvc.User()" (onRowClick)="handleRowClicked($event)" [showBorders]="true">
             <dxo-data-grid-filter-row [visible]="true"></dxo-data-grid-filter-row>
-            <dxo-data-grid-editing mode="popup" [allowAdding]="false" [allowUpdating]="true" [allowDeleting]="true"></dxo-data-grid-editing>
+            <dxo-data-grid-editing [allowAdding]="false" [allowUpdating]="true" [allowDeleting]="true"></dxo-data-grid-editing>
 
 
             
@@ -21,11 +23,11 @@
             <dxi-data-grid-column dataField="name" dataType="string" caption="{{'resource.name' | translate}}"></dxi-data-grid-column>
             <dxi-data-grid-column dataField="role" dataType="string"caption="{{'resource.role' | translate}}"></dxi-data-grid-column>
             <dxi-data-grid-column dataField="contract" dataType="string"caption="{{'resource.contract' | translate}}">
-              <!--<dxo-lookup
+            <dxo-lookup
               [dataSource]="contractTypes"
               valueExpr="id"
-              displayExpr="name">
-            </dxo-lookup>-->
+              displayExpr="text">
+            </dxo-lookup>
             </dxi-data-grid-column>
             <dxi-data-grid-column dataField="dateBirth" dataType="date" format="dd/MM/yyyy" caption="{{'resource.birthday-date' | translate}}"></dxi-data-grid-column>
             
@@ -46,6 +48,30 @@
   </div>
   <br>
   <button type="button" class="btn btn-dark" (click)="handleNewUser()">
-    {{'common.button.add' | translate}} {{'common.title.resource' | translate  | lowercase}}
+    {{'common.button.add' | translate}} {{'common.title.resource' | translate | lowercase}}
   </button>
-</div>
+
+<br>
+<br>
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="card">
+          <div class="card-body">
+            <dx-pie-chart title="{{'resource.contract' | translate}}" [dataSource]="contractData()">
+              <dxi-pie-chart-series argumentField="type" valueField="value">
+                <dxo-pie-chart-label [visible]="true" position="columns">
+                  <dxo-pie-chart-font [size]="16"></dxo-pie-chart-font>
+                  <dxo-pie-chart-connector [visible]="true" [width]="0.5"></dxo-pie-chart-connector>
+                </dxo-pie-chart-label>
+              </dxi-pie-chart-series>
+            </dx-pie-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+

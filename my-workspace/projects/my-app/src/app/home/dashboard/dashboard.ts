@@ -16,13 +16,4 @@ export class Dashboard {
   protected readonly projectSvc = inject(ProjectService);
   protected readonly unionsSvc = inject(UnionService);
   protected readonly UserSvc = inject(UserService);
-  
-  protected totalHour(): number{
-    let sumHour = 0;
-    const union = this.unionsSvc.Union();
-    for(let i = 0; i < union.length; i ++){
-      sumHour += union[i].hours;
-    }
-    return sumHour;
-  }
 }
