@@ -100,4 +100,25 @@ export class UnionService {
 
     return sum;
   })
+
+  public readonly getHour = computed(() => {
+    const unions = this.unionList();
+
+    const hoursByUser: { idUser: number, hours: number }[] = [];
+
+    unions.forEach(u => {
+      const existing = hoursByUser.find(h => h.idUser === u.idUser);
+
+      if (existing) {
+        existing.hours += u.hours;
+      } else {
+        hoursByUser.push({
+          idUser: u.idUser,
+          hours: u.hours
+        });
+      }
+    });
+
+    return hoursByUser;
+  })
 }

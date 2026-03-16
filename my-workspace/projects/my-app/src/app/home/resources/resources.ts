@@ -61,23 +61,21 @@ export class Resources implements OnInit {
   };
   
   protected readonly contractData = computed(() => {
+    const users = this.UserSvc.User();
+    const counts: Record<number, number> = {
+      0: 0,
+      1: 0,
+      2: 0
+    };
 
-  const users = this.UserSvc.User();
+    users.forEach(u => {
+      counts[u.contract]++;
+    });
 
-  const counts: Record<number, number> = {
-    0: 0,
-    1: 0,
-    2: 0
-  };
+    return this.contractTypes.map(c => ({
+      type: c.text,
+      value: counts[c.id]
+    }));
 
-  users.forEach(u => {
-    counts[u.contract]++;
   });
-
-  return this.contractTypes.map(c => ({
-    type: c.text,
-    value: counts[c.id]
-  }));
-
-});
 }
