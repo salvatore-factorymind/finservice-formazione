@@ -1,7 +1,6 @@
 
 @let isLoading = UserSvc.loading();
 <div class="container">
-</div>
   <h3><b>{{'common.title.resource' | translate}}</b></h3><br>
   <div class="row">
     <div class="col-md-12">
@@ -21,6 +20,13 @@
             <dxi-data-grid-column dataField="id" dataType="number" caption="{{'common.id' | translate}}" width="80"></dxi-data-grid-column>
             <dxi-data-grid-column dataField="surname" dataType="string" caption="{{'resource.surname' | translate}}"></dxi-data-grid-column>
             <dxi-data-grid-column dataField="name" dataType="string" caption="{{'resource.name' | translate}}"></dxi-data-grid-column>
+            <dxi-data-grid-column dataField="sex" dataType="string"caption="{{'resource.sex' | translate}}" width="50">
+              <dxo-lookup
+                [dataSource]="SexTypes"
+                valueExpr="id"
+                displayExpr="text">
+              </dxo-lookup>
+              </dxi-data-grid-column>
             <dxi-data-grid-column dataField="role" dataType="string"caption="{{'resource.role' | translate}}"></dxi-data-grid-column>
             <dxi-data-grid-column dataField="contract" dataType="string"caption="{{'resource.contract' | translate}}">
             <dxo-lookup
@@ -54,23 +60,38 @@
 <br>
 <br>
 
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="card">
-          <div class="card-body">
-            <dx-pie-chart title="{{'resource.contract' | translate}}" [dataSource]="contractData()">
-              <dxi-pie-chart-series argumentField="type" valueField="value">
-                <dxo-pie-chart-label [visible]="true" position="columns">
-                  <dxo-pie-chart-font [size]="16"></dxo-pie-chart-font>
-                  <dxo-pie-chart-connector [visible]="true" [width]="0.5"></dxo-pie-chart-connector>
-                </dxo-pie-chart-label>
-              </dxi-pie-chart-series>
-            </dx-pie-chart>
-          </div>
-        </div>
+<div class="row">
+
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <dx-pie-chart title="{{'resource.contract' | translate}}" [dataSource]="contractData()">
+          <dxi-pie-chart-series argumentField="type" valueField="value">
+            <dxo-pie-chart-label [visible]="true" position="columns">
+              <dxo-pie-chart-font [size]="16"></dxo-pie-chart-font>
+              <dxo-pie-chart-connector [visible]="true" [width]="0.5"></dxo-pie-chart-connector>
+            </dxo-pie-chart-label>
+          </dxi-pie-chart-series>
+        </dx-pie-chart>
       </div>
     </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <dx-pie-chart title="{{'resource.sex' | translate}}" [dataSource]="SexData()">
+          <dxi-pie-chart-series argumentField="type" valueField="value">
+            <dxo-pie-chart-label [visible]="true" position="columns">
+              <dxo-pie-chart-font [size]="16"></dxo-pie-chart-font>
+              <dxo-pie-chart-connector [visible]="true" [width]="0.5"></dxo-pie-chart-connector>
+            </dxo-pie-chart-label>
+          </dxi-pie-chart-series>
+        </dx-pie-chart>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

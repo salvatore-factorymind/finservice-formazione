@@ -28,6 +28,11 @@ export class Resources implements OnInit {
     { id: 1, text: 'Tempo indeterminato' },
     { id: 2, text: 'Stagista' }
   ];
+
+  SexTypes = [
+    { id: 0, text: 'M' },
+    { id: 1, text: 'F' },
+  ];
   
   public ngOnInit(): void {
     this.UserSvc.init();
@@ -75,6 +80,26 @@ export class Resources implements OnInit {
   });
 
   return this.contractTypes.map(c => ({
+    type: c.text,
+    value: counts[c.id]
+  }));
+
+});
+
+protected readonly SexData = computed(() => {
+
+  const users = this.UserSvc.User();
+
+  const counts: Record<number, number> = {
+    0: 0,
+    1: 0
+  };
+
+  users.forEach(u => {
+    counts[u.sex]++;
+  });
+
+  return this.SexTypes.map(c => ({
     type: c.text,
     value: counts[c.id]
   }));

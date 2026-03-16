@@ -4,21 +4,21 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap'
 
 import { UserService } from '../../service/user.service';
 import { ActivatedRoute } from '@angular/router';
-import { ContractType, User } from '../../models/user-model';
+import { ContractType, SexType, User } from '../../models/user-model';
 import { TranslatePipe } from '@ngx-translate/core';
 import { FormUserContractComponent } from "../../components/form-user-contract/form-user-contract/form-user-contract.component";
+import { FormUserSexComponent } from '../../components/form-user-contract/form-user-sex/form-user-sex/form-user-sex.component';
 
 
 
 @Component({
   selector: 'app-user-modal',
   templateUrl: './user-modal.html',
-  imports: [ReactiveFormsModule, FormsModule, TranslatePipe, FormUserContractComponent]
+  imports: [ReactiveFormsModule, FormsModule, TranslatePipe, FormUserContractComponent, FormUserSexComponent]
 })
 
 export class UserModalComponent{
-
-    private readonly route = inject(ActivatedRoute)
+  
     protected readonly activeModal = inject(NgbActiveModal)
     protected readonly UserSvc = inject(UserService)
     
@@ -30,7 +30,8 @@ export class UserModalComponent{
         name: new FormControl<string | null>(null, Validators.required),
         role: new FormControl<string | null>(null, Validators.required),
         dateBirth: new FormControl<Date | null>(null, [Validators.required, validBirthdate()]),
-        contract: new FormControl<ContractType | null>({value: ContractType.Intern, disabled:false})
+        contract: new FormControl<ContractType | null>({value: ContractType.Intern, disabled:false}),
+        sex: new FormControl<SexType | null>({value: SexType.male, disabled:false})
     })
 
     public ngOnInit(): void {

@@ -1,6 +1,6 @@
 import { computed, inject, Injectable, Signal, signal } from '@angular/core';
  
-import { ContractType, User } from '../models/user-model';
+import { ContractType, SexType, User } from '../models/user-model';
 import { UnionService } from './union.service';
 import { FunctionsService } from './functions/functions.service';
  
@@ -17,7 +17,8 @@ private readonly UserList = signal<User[]>([
     name: "Mario",
     role: "Developer",
     dateBirth: new Date("1990-05-12"),
-    contract: ContractType.FixedTerm
+    contract: ContractType.FixedTerm,
+    sex: SexType.male
   },
   {
     id: 2,
@@ -25,7 +26,8 @@ private readonly UserList = signal<User[]>([
     name: "Laura",
     role: "Project Manager",
     dateBirth: new Date("1985-09-23"),
-    contract: ContractType.Intern
+    contract: ContractType.Intern,
+    sex: SexType.female
   },
   {
     id: 3,
@@ -33,7 +35,8 @@ private readonly UserList = signal<User[]>([
     name: "Luca",
     role: "UI/UX Designer",
     dateBirth: new Date("1995-02-18"),
-    contract: ContractType.Permanent
+    contract: ContractType.Permanent,
+    sex: SexType.male
   }
 ])
  

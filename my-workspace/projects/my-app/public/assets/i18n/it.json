@@ -25,6 +25,9 @@
         "FixedTerm": "Tempo determinato",
         "Permanent": "Tempo indeterminato",
         "Intern": "Stagista",
+        "sex":"Sesso",
+        "male":"Maschio",
+        "female":"Femmina",
         "control":{
             "birthday-date": "Il dipendente deve essere maggiorenne"
         }

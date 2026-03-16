@@ -1,0 +1,18 @@
+<div class="btn-group" role="group" aria-label="Basic outlined example">
+  <button 
+    [disabled]="disabled()"
+    type="button" 
+    class="btn btn-outline-primary" 
+    [class.active]="value() === SexType.male" 
+    (click)="handleValueChanged(SexType.male)">
+    {{"resource.male" | translate}}
+  </button>
+  <button
+    [disabled]="disabled()"
+    type="button" 
+    class="btn btn-outline-primary" 
+    [class.active]="value() === SexType.female" 
+    (click)="handleValueChanged(SexType.female)">
+    {{"resource.female" | translate}}
+  </button>
+</div>

@@ -6,36 +6,39 @@
     },
     
     "dashboard": {
-        "totalUser": "Total resources",
-        "userTotaleIs": "The total resources are:",
+        "totalUser": "Total Resources",
+        "userTotaleIs":"Total resources are:",
 
-        "totalProject": "Number of projects",
-        "projectTotalIs": "The total projects are:",
+        "totalProject": "Number of Projects",
+        "projectTotalIs":"Total projects are:",
 
-        "totalHour": "Total hours",
-        "hourTotaleIs": "The total hours are:"
+        "totalHour": "Total Hours",
+        "hourTotaleIs": "Total hours are:"
     },
 
     "resource": {
-        "surname": "Surname",
+        "surname":"Surname",
         "name": "Name",
-        "role": "Role",
-        "birthday-date": "Birth date",
-        "contract": "Contract type",
+        "role":"Role",
+        "birthday-date": "Date of Birth",
+        "contract": "Contract Type",
         "FixedTerm": "Fixed-term",
         "Permanent": "Permanent",
         "Intern": "Intern",
-        "control": {
+        "sex":"Sex",
+        "male":"Male",
+        "female":"Female",
+        "control":{
             "birthday-date": "The employee must be an adult"
         }
     },
     
     "project": {
         "table": {
-            "name": "Project name",
+            "name": "Project Name",
             "description": "Description",
-            "date-start": "Start date",
-            "date-finish": "End date"
+            "date-start": "Start Date",
+            "date-finish": "End Date"
         },
         "control": {
             "dateFinish": "The end date cannot be earlier than the project start date"
@@ -46,35 +49,35 @@
         "table": {
             "surname-name": "Surname Name",
             "project": "Project",
-            "project-duration": "Project duration",
+            "project-duration": "Project Duration",
             "hour": "Hours"
         },
         "modal": {
             "user": "User",
             "hour": "Hours"
         },
-        "control": {
+        "control":{
             "hour": "Hours must be greater than 0"
         }
     },
 
-    "common": {
-        "enter-data": "Enter data",
-        "loading": "Loading",
+    "common":{
+        "enter-data":"Enter data",
+        "loading" : "Loading",
         "id": "Id",
-        "button": {
+        "button":{
             "add": "Add",
             "submit": "Submit",
             "close": "Close",
             "delete": "Delete"
         },
         
-        "control": {
-            "required": "Required field"
+        "control":{
+            "required":"Required field"
         },
-        "title": {
+        "title":{
             "dashboard": "Dashboard",
-            "resource": "Resources",
+            "resource":"Resources",
             "project": "Projects",
             "association": "Associations"
         }
