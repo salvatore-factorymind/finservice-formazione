@@ -49,4 +49,21 @@
     <button type="button" class="btn btn-success" (click)="unionsSvc.deleteUnionUser(1)">Elimina utente</button><br><br>
     <button type="button" class="btn btn-success" (click)="unionsSvc.deleteUnionProject(1)">Elimina progetto</button><br><br>
     -->
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="card">
+          <div class="card-body">
+            <dx-pie-chart title="{{'association.table.hour' | translate}}" [dataSource]="unionsSvc.getHour()">
+              <dxi-pie-chart-series argumentField="idUser" valueField="hours">
+                <dxo-pie-chart-label [visible]="true" position="columns">
+                  <dxo-pie-chart-font [size]="16"></dxo-pie-chart-font>
+                  <dxo-pie-chart-connector [visible]="true" [width]="0.5"></dxo-pie-chart-connector>
+                </dxo-pie-chart-label>
+              </dxi-pie-chart-series>
+            </dx-pie-chart>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>

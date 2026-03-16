@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { DxDataGridModule, DxDataGridTypes } from 'devextreme-angular/ui/data-grid';
-import { DxLookupModule } from 'devextreme-angular';
+import { DxLookupModule, DxPieChartModule } from 'devextreme-angular';
 import { DxButtonModule } from 'devextreme-angular';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -19,7 +19,7 @@ import { UnionModal } from '../../shared/modals/union-modal/union-modal';
   selector: 'app-presences',
   templateUrl: './presences.html',
   styleUrl: './presences.css',
-  imports: [DxDataGridModule, DxLookupModule, DxButtonModule, TranslatePipe, LowerCasePipe]
+  imports: [DxDataGridModule, DxLookupModule, DxButtonModule, TranslatePipe, LowerCasePipe, DxPieChartModule]
 })
 export class Presences {
   protected readonly unionsSvc = inject(UnionService);
