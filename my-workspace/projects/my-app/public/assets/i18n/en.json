@@ -4,37 +4,38 @@
         "menu": "Menu",
         "footer": "© 2026 Project Management System - All rights reserved"
     },
-    
+
     "dashboard": {
         "totalUser": "Total Resources",
-        "userTotaleIs":"Total resources are:",
+        "userTotaleIs": "The total resources are:",
 
-        "totalProject": "Number of Projects",
-        "projectTotalIs":"Total projects are:",
+        "totalProject": "Total Projects",
+        "projectTotalIs": "The total projects are:",
 
         "totalHour": "Total Hours",
-        "hourTotaleIs": "Total hours are:"
+        "hourTotaleIs": "The total hours are:"
     },
 
     "resource": {
-        "surname":"Surname",
+        "surname": "Surname",
         "name": "Name",
-        "role":"Role",
-        "birthday-date": "Date of Birth",
+        "role": "Role",
+        "birthday-date": "Birth Date",
         "contract": "Contract Type",
         "FixedTerm": "Fixed-term",
         "Permanent": "Permanent",
         "Intern": "Intern",
-        "sex":"Sex",
-        "male":"Male",
-        "female":"Female",
-        "control":{
-            "birthday-date": "The employee must be an adult"
+        "sex": "Gender",
+        "male": "Male",
+        "female": "Female",
+        "control": {
+            "birthday-date": "The employee must be at least 18 years old"
         }
     },
-    
+
     "project": {
         "table": {
+            "type": "Project Type",
             "name": "Project Name",
             "description": "Description",
             "date-start": "Start Date",
@@ -44,7 +45,7 @@
             "dateFinish": "The end date cannot be earlier than the project start date"
         }
     },
-    
+
     "association": {
         "table": {
             "surname-name": "Surname Name",
@@ -56,28 +57,28 @@
             "user": "User",
             "hour": "Hours"
         },
-        "control":{
+        "control": {
             "hour": "Hours must be greater than 0"
         }
     },
 
-    "common":{
-        "enter-data":"Enter data",
-        "loading" : "Loading",
+    "common": {
+        "enter-data": "Enter data",
+        "loading": "Loading",
         "id": "Id",
-        "button":{
+        "button": {
             "add": "Add",
             "submit": "Submit",
             "close": "Close",
             "delete": "Delete"
         },
-        
-        "control":{
-            "required":"Required field"
+
+        "control": {
+            "required": "Required field"
         },
-        "title":{
+        "title": {
             "dashboard": "Dashboard",
-            "resource":"Resources",
+            "resource": "Resources",
             "project": "Projects",
             "association": "Associations"
         }

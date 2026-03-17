@@ -4,14 +4,15 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap'
 import { TranslatePipe } from '@ngx-translate/core';
 
 import { ProjectService } from '../../service/project.service';
-import { Project } from '../../models/project-model';
+import { Project, ProjectType } from '../../models/project-model';
+import { FormProjectProjectTypeComponent } from '../../components/form-user-contract/form-project/form-project-projectType/form-project-projectType.component';
  
  
  
 @Component({
   selector: 'app-project-modal',
   templateUrl: './project-modal.html',
-  imports: [ReactiveFormsModule, FormsModule, TranslatePipe]
+  imports: [ReactiveFormsModule, FormsModule, TranslatePipe, FormProjectProjectTypeComponent]
 })
  
 export class ProjectModalComponent implements OnInit{
@@ -28,9 +29,10 @@ export class ProjectModalComponent implements OnInit{
     description: new FormControl<string | null>(null, Validators.required),
     dateStart: new FormControl<Date | null>(null, Validators.required),
     dateFinish: new FormControl<Date | null>(null, [Validators.required, validDateFinish()]),
+    type: new FormControl<ProjectType | null>({value: ProjectType.Ecommerce, disabled:false})
   });
  
-  ngOnInit(): void {
+  public ngOnInit(): void {
     const projectId = this.projectIdToEdit || 0;
  
     const projectToEdit = this.projectSvc.Project().find(project => project.id === projectId);

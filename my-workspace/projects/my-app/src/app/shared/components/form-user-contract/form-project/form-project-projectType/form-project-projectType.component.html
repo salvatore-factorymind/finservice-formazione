@@ -1,0 +1,26 @@
+<div class="btn-group" role="group" aria-label="Basic outlined example">
+  <button 
+    [disabled]="disabled()"
+    type="button" 
+    class="btn btn-outline-primary" 
+    [class.active]="value() === ProjectType.Ecommerce" 
+    (click)="handleValueChanged(ProjectType.Ecommerce)">
+    Ecommerce
+  </button>
+  <button
+    [disabled]="disabled()"
+    type="button" 
+    class="btn btn-outline-primary" 
+    [class.active]="value() === ProjectType.Mobile_app" 
+    (click)="handleValueChanged(ProjectType.Mobile_app)">
+    Mobile App
+  </button>
+    <button
+    [disabled]="disabled()"
+    type="button" 
+    class="btn btn-outline-primary" 
+    [class.active]="value() === ProjectType.Web_app" 
+    (click)="handleValueChanged(ProjectType.Web_app)">
+    Web App
+  </button>
+</div>

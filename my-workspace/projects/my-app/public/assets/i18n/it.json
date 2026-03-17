@@ -35,6 +35,7 @@
     
     "project": {
         "table": {
+            "type": "Tipologia Progetto",
             "name": "Nome progetto",
             "description": "Descrizione",
             "date-start": "Data d'inizio",

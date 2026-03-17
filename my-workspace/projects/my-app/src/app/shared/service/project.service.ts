@@ -1,5 +1,5 @@
 import { computed, inject, Injectable, Signal, signal } from '@angular/core';
-import { Project } from '../models/project-model';
+import { Project, ProjectType } from '../models/project-model';
 import { UnionService } from './union.service';
 import { FunctionsService } from './functions/functions.service';
 
@@ -17,15 +17,25 @@ export class ProjectService {
     name: "E-commerce Platform",
     description: "Sviluppo piattaforma e-commerce aziendale",
     dateStart: new Date("2024-01-10"),
-    dateFinish: new Date("2024-06-30")
+    dateFinish: new Date("2024-06-30"),
+    type: ProjectType.Ecommerce
   },
   {
     id: 2,
     name: "Mobile App",
     description: "App mobile per clienti",
     dateStart: new Date("2024-03-01"),
-    dateFinish: new Date("2024-09-15")
-  }
+    dateFinish: new Date("2024-09-15"),
+    type: ProjectType.Mobile_app
+  },
+  {
+  id: 3,
+  name: "Corporate Website",
+  description: "Sviluppo sito web aziendale",
+  type: ProjectType.Web_app,
+  dateStart: new Date("2024-05-01"),
+  dateFinish: new Date("2024-08-31")
+}
 ])
  
   public get Project():Signal<Project[]>{

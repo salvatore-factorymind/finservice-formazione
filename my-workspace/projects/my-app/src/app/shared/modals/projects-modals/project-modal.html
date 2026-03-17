@@ -15,7 +15,7 @@
         <input type="text" class="form-control" formControlName="name">
         @if(formGroup.controls.name.errors?.['required']){
           <div class="text-danger">
-            {{"project.control.required" | translate}}
+            {{"common.control.required" | translate}}
           </div>
         }
  
@@ -23,15 +23,18 @@
         <input type="text" class="form-control" formControlName="description">
         @if(formGroup.controls.description.errors?.['required']){
           <div class="text-danger">
-            {{"project.control.required" | translate}}
+            {{"common.control.required" | translate}}
           </div>
         }
- 
+        <label class="form-label">{{'project.table.type' | translate}}</label>
+        <br>
+        <app-form-project-projectType formControlName="type"></app-form-project-projectType>
+        <br>
         <label class="form-label">{{"project.table.date-start" | translate}}</label>
         <input type="date" class="form-control" formControlName="dateStart">
         @if(formGroup.controls.dateStart.errors?.['required']){
           <div class="text-danger">
-            {{"project.control.required" | translate}}
+            {{"common.control.required" | translate}}
           </div>
         }
  
@@ -39,7 +42,7 @@
         <input type="date" class="form-control" formControlName="dateFinish">
         @if(formGroup.controls.dateFinish.errors?.['required']){
           <div class="text-danger">
-            {{"project.control.required" | translate}}
+            {{"common.control.required" | translate}}
           </div>
         }
         @if(formGroup.controls.dateFinish.errors?.['dateF']){

@@ -35,17 +35,15 @@ export class UserModalComponent{
     })
 
     public ngOnInit(): void {
-    const UserId = this.UserIdToEdit
-
-    const UserToEdit = this.UserSvc.User().find(user=> user.id === UserId);
-    if(!!UserToEdit){
-      this.FormGroup.patchValue(UserToEdit);
-    }
-    
-    
-    this.FormGroup.controls.dateBirth.setValidators([
-      Validators.required,
-      validBirthdate()
+      const UserId = this.UserIdToEdit
+      const UserToEdit = this.UserSvc.User().find(user=> user.id === UserId);
+      if(!!UserToEdit){
+        this.FormGroup.patchValue(UserToEdit);
+      }
+      
+      this.FormGroup.controls.dateBirth.setValidators([
+        Validators.required,
+        validBirthdate()
     ]);
   }
 
